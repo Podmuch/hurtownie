@@ -1,0 +1,2640 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/7/2014 4:33:25 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HAIROX-KOMPUTER"
+  DTS:CreatorName="hairox-Komputer\hairox"
+  DTS:DTSID="{E3300857-699F-46E4-9A18-4E30739327C6}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="12.0.2430.0"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{F0BDC040-8DC1-44D7-AE7D-D0DF9B7F7628}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Informacje o prowadzacych"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{2C068C1B-2DE7-49EB-8C8E-94B135BC2B6F}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Informacje o prowadzacych"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Informacje o prowadzacych\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Informacje o prowadzacych\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Informacje o prowadzacych\Derived Column.Inputs[Derived Column Input].Columns[Imie]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Imie"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Imie]" />
+                    <inputColumn
+                      refId="Package\Informacje o prowadzacych\Derived Column.Inputs[Derived Column Input].Columns[Nazwisko]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="Nazwisko"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Nazwisko]" />
+                    <inputColumn
+                      refId="Package\Informacje o prowadzacych\Derived Column.Inputs[Derived Column Input].Columns[Staz]"
+                      cachedDataType="i4"
+                      cachedName="Staz"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Staz]" />
+                    <inputColumn
+                      refId="Package\Informacje o prowadzacych\Derived Column.Inputs[Derived Column Input].Columns[Wiek]"
+                      cachedDataType="i4"
+                      cachedName="Wiek"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Wiek]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Informacje o prowadzacych\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Informacje o prowadzacych\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Derived Column.Outputs[Derived Column Output].Columns[ImieINazwisko]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="128"
+                      lineageId="Package\Informacje o prowadzacych\Derived Column.Outputs[Derived Column Output].Columns[ImieINazwisko]"
+                      name="ImieINazwisko"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Imie]} + " " + #{Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Nazwisko]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">Imie + " " + Nazwisko</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Derived Column.Outputs[Derived Column Output].Columns[ID_Daty_Wstawienia]"
+                      dataType="date"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Informacje o prowadzacych\Derived Column.Outputs[Derived Column Output].Columns[ID_Daty_Wstawienia]"
+                      name="ID_Daty_Wstawienia"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"2010-10-10"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"2010-10-10"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Derived Column.Outputs[Derived Column Output].Columns[PrzedzialWiekowy]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\Informacje o prowadzacych\Derived Column.Outputs[Derived Column Output].Columns[PrzedzialWiekowy]"
+                      name="PrzedzialWiekowy"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Wiek]} &lt;= 30 ? "20-30" : #{Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Wiek]} &lt;= 40 ? "31-40" : #{Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Wiek]} &lt;= 50 ? "41-50" : #{Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Wiek]} &lt;= 60 ? "51-60" : "powyzej 60"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">Wiek &lt;= 30 ? "20-30" : Wiek &lt;= 40 ? "31-40" : Wiek &lt;= 50 ? "41-50" : Wiek &lt;= 60 ? "51-60" : "powyzej 60"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Derived Column.Outputs[Derived Column Output].Columns[PrzedzialStazu]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\Informacje o prowadzacych\Derived Column.Outputs[Derived Column Output].Columns[PrzedzialStazu]"
+                      name="PrzedzialStazu"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Staz]} &lt;= 10 ? "0-10" : #{Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Staz]} &lt;= 20 ? "11-20" : #{Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Staz]} &lt;= 30 ? "21-30" : "powyzej 30"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">Staz &lt;= 10 ? "0-10" : Staz &lt;= 20 ? "11-20" : Staz &lt;= 30 ? "21-30" : "powyzej 30"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Derived Column.Outputs[Derived Column Output].Columns[Aktualnosc]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Informacje o prowadzacych\Derived Column.Outputs[Derived Column Output].Columns[Aktualnosc]"
+                      name="Aktualnosc"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression"> TRUE </property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression"> TRUE </property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Informacje o prowadzacych\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Informacje o prowadzacych\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o prowadzacych\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o prowadzacych\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Informacje o prowadzacych\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Prowadzacy]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Informacje o prowadzacych\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{6D353003-1F89-4389-A92B-2D4D4E32161A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[HAIROX-KOMPUTER.hurtownia_szkola]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Pesel]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Pesel"
+                      externalMetadataColumnId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PESEL]"
+                      lineageId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[Pesel]" />
+                    <inputColumn
+                      refId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tytul]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Tytul"
+                      externalMetadataColumnId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tytul]"
+                      lineageId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[Tytul]" />
+                    <inputColumn
+                      refId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Katedra]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Katedra"
+                      externalMetadataColumnId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Katedra]"
+                      lineageId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[Katedra]" />
+                    <inputColumn
+                      refId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Wydzial]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Wydzial"
+                      externalMetadataColumnId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Wydzial]"
+                      lineageId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[Wydzial]" />
+                    <inputColumn
+                      refId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ImieINazwisko]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="128"
+                      cachedName="ImieINazwisko"
+                      externalMetadataColumnId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ImieINazwisko]"
+                      lineageId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[ImieINazwisko]" />
+                    <inputColumn
+                      refId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ID_Daty_Wstawienia]"
+                      cachedDataType="date"
+                      cachedName="ID_Daty_Wstawienia"
+                      externalMetadataColumnId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Daty_Wstawienia]"
+                      lineageId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[ID_Daty_Wstawienia]" />
+                    <inputColumn
+                      refId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PrzedzialWiekowy]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="PrzedzialWiekowy"
+                      externalMetadataColumnId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PrzedzialWiekowy]"
+                      lineageId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[PrzedzialWiekowy]" />
+                    <inputColumn
+                      refId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PrzedzialStazu]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="PrzedzialStazu"
+                      externalMetadataColumnId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PrzedzialStazu]"
+                      lineageId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[PrzedzialStazu]" />
+                    <inputColumn
+                      refId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Aktualnosc]"
+                      cachedDataType="bool"
+                      cachedName="Aktualnosc"
+                      externalMetadataColumnId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Aktualnosc]"
+                      lineageId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[Aktualnosc]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Prowadzącego]"
+                      dataType="i4"
+                      name="ID_Prowadzącego" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Daty_Wstawienia]"
+                      dataType="dbTimeStamp"
+                      name="ID_Daty_Wstawienia" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Daty_Wygasniecia]"
+                      dataType="dbTimeStamp"
+                      name="ID_Daty_Wygasniecia" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Przelozonego]"
+                      dataType="i4"
+                      name="ID_Przelozonego" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Aktualnosc]"
+                      codePage="1250"
+                      dataType="str"
+                      length="15"
+                      name="Aktualnosc" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PESEL]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="PESEL" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ImieINazwisko]"
+                      codePage="1250"
+                      dataType="str"
+                      length="128"
+                      name="ImieINazwisko" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PrzedzialWiekowy]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="PrzedzialWiekowy" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PrzedzialStazu]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="PrzedzialStazu" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Katedra]"
+                      codePage="1250"
+                      dataType="str"
+                      length="100"
+                      name="Katedra" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Wydzial]"
+                      codePage="1250"
+                      dataType="str"
+                      length="100"
+                      name="Wydzial" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tytul]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Tytul" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Informacje o prowadzacych\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o prowadzacych\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o prowadzacych\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Informacje o prowadzacych\Prowadzacy"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Prowadzacy"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Prowadzacy]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Informacje o prowadzacych\Prowadzacy.Connections[OleDbConnection]"
+                  connectionManagerID="{E8EA4A62-3854-453D-A7C5-839F3B3A7841}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[HAIROX-KOMPUTER.szkola]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Id_pracownika]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].ExternalColumns[Id_pracownika]"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Id_pracownika]"
+                      name="Id_pracownika"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Pesel]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].ExternalColumns[Pesel]"
+                      length="20"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Pesel]"
+                      name="Pesel"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Tytul]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].ExternalColumns[Tytul]"
+                      length="20"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Tytul]"
+                      name="Tytul"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Staz]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].ExternalColumns[Staz]"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Staz]"
+                      name="Staz"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Wiek]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].ExternalColumns[Wiek]"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Wiek]"
+                      name="Wiek"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Imie]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].ExternalColumns[Imie]"
+                      length="20"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Imie]"
+                      name="Imie"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Nazwisko]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].ExternalColumns[Nazwisko]"
+                      length="30"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Nazwisko]"
+                      name="Nazwisko"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Katedra]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].ExternalColumns[Katedra]"
+                      length="100"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Katedra]"
+                      name="Katedra"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Wydzial]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].ExternalColumns[Wydzial]"
+                      length="100"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Wydzial]"
+                      name="Wydzial"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].ExternalColumns[Id_pracownika]"
+                      dataType="i4"
+                      name="Id_pracownika" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].ExternalColumns[Pesel]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="Pesel" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].ExternalColumns[Tytul]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="Tytul" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].ExternalColumns[Staz]"
+                      dataType="i4"
+                      name="Staz" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].ExternalColumns[Wiek]"
+                      dataType="i4"
+                      name="Wiek" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].ExternalColumns[Imie]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="Imie" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].ExternalColumns[Nazwisko]"
+                      codePage="1250"
+                      dataType="str"
+                      length="30"
+                      name="Nazwisko" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].ExternalColumns[Katedra]"
+                      codePage="1250"
+                      dataType="str"
+                      length="100"
+                      name="Katedra" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].ExternalColumns[Wydzial]"
+                      codePage="1250"
+                      dataType="str"
+                      length="100"
+                      name="Wydzial" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Error Output].Columns[Id_pracownika]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Error Output].Columns[Id_pracownika]"
+                      name="Id_pracownika" />
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Error Output].Columns[Pesel]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Error Output].Columns[Pesel]"
+                      name="Pesel" />
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Error Output].Columns[Tytul]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Error Output].Columns[Tytul]"
+                      name="Tytul" />
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Error Output].Columns[Staz]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Error Output].Columns[Staz]"
+                      name="Staz" />
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Error Output].Columns[Wiek]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Error Output].Columns[Wiek]"
+                      name="Wiek" />
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Error Output].Columns[Imie]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Error Output].Columns[Imie]"
+                      name="Imie" />
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Error Output].Columns[Nazwisko]"
+                      codePage="1250"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Error Output].Columns[Nazwisko]"
+                      name="Nazwisko" />
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Error Output].Columns[Katedra]"
+                      codePage="1250"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Error Output].Columns[Katedra]"
+                      name="Katedra" />
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Error Output].Columns[Wydzial]"
+                      codePage="1250"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Error Output].Columns[Wydzial]"
+                      name="Wydzial" />
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Informacje o prowadzacych\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Informacje o prowadzacych\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Informacje o prowadzacych\Sort.Inputs[Sort Input].Columns[Id_pracownika]"
+                      cachedDataType="i4"
+                      cachedName="Id_pracownika"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Id_pracownika]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o prowadzacych\Sort.Inputs[Sort Input].Columns[Pesel]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Pesel"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Pesel]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o prowadzacych\Sort.Inputs[Sort Input].Columns[Tytul]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Tytul"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Tytul]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o prowadzacych\Sort.Inputs[Sort Input].Columns[Staz]"
+                      cachedDataType="i4"
+                      cachedName="Staz"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Staz]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o prowadzacych\Sort.Inputs[Sort Input].Columns[Wiek]"
+                      cachedDataType="i4"
+                      cachedName="Wiek"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Wiek]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o prowadzacych\Sort.Inputs[Sort Input].Columns[Katedra]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Katedra"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Katedra]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o prowadzacych\Sort.Inputs[Sort Input].Columns[Wydzial]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Wydzial"
+                      lineageId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Wydzial]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o prowadzacych\Sort.Inputs[Sort Input].Columns[ImieINazwisko]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="128"
+                      cachedName="ImieINazwisko"
+                      lineageId="Package\Informacje o prowadzacych\Derived Column.Outputs[Derived Column Output].Columns[ImieINazwisko]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o prowadzacych\Sort.Inputs[Sort Input].Columns[ID_Daty_Wstawienia]"
+                      cachedDataType="date"
+                      cachedName="ID_Daty_Wstawienia"
+                      lineageId="Package\Informacje o prowadzacych\Derived Column.Outputs[Derived Column Output].Columns[ID_Daty_Wstawienia]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o prowadzacych\Sort.Inputs[Sort Input].Columns[PrzedzialWiekowy]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="PrzedzialWiekowy"
+                      lineageId="Package\Informacje o prowadzacych\Derived Column.Outputs[Derived Column Output].Columns[PrzedzialWiekowy]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o prowadzacych\Sort.Inputs[Sort Input].Columns[PrzedzialStazu]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="PrzedzialStazu"
+                      lineageId="Package\Informacje o prowadzacych\Derived Column.Outputs[Derived Column Output].Columns[PrzedzialStazu]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o prowadzacych\Sort.Inputs[Sort Input].Columns[Aktualnosc]"
+                      cachedDataType="bool"
+                      cachedName="Aktualnosc"
+                      lineageId="Package\Informacje o prowadzacych\Derived Column.Outputs[Derived Column Output].Columns[Aktualnosc]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[Id_pracownika]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[Id_pracownika]"
+                      name="Id_pracownika"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Id_pracownika]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[Pesel]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[Pesel]"
+                      name="Pesel">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Pesel]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[Tytul]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[Tytul]"
+                      name="Tytul">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Tytul]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[Staz]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[Staz]"
+                      name="Staz">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Staz]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[Wiek]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[Wiek]"
+                      name="Wiek">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Wiek]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[Katedra]"
+                      codePage="1250"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[Katedra]"
+                      name="Katedra">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Katedra]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[Wydzial]"
+                      codePage="1250"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[Wydzial]"
+                      name="Wydzial">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output].Columns[Wydzial]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[ImieINazwisko]"
+                      codePage="1250"
+                      dataType="str"
+                      length="128"
+                      lineageId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[ImieINazwisko]"
+                      name="ImieINazwisko">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Informacje o prowadzacych\Derived Column.Outputs[Derived Column Output].Columns[ImieINazwisko]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[ID_Daty_Wstawienia]"
+                      dataType="date"
+                      lineageId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[ID_Daty_Wstawienia]"
+                      name="ID_Daty_Wstawienia">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Informacje o prowadzacych\Derived Column.Outputs[Derived Column Output].Columns[ID_Daty_Wstawienia]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[PrzedzialWiekowy]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[PrzedzialWiekowy]"
+                      name="PrzedzialWiekowy">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Informacje o prowadzacych\Derived Column.Outputs[Derived Column Output].Columns[PrzedzialWiekowy]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[PrzedzialStazu]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[PrzedzialStazu]"
+                      name="PrzedzialStazu">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Informacje o prowadzacych\Derived Column.Outputs[Derived Column Output].Columns[PrzedzialStazu]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[Aktualnosc]"
+                      dataType="bool"
+                      lineageId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output].Columns[Aktualnosc]"
+                      name="Aktualnosc">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Informacje o prowadzacych\Derived Column.Outputs[Derived Column Output].Columns[Aktualnosc]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Informacje o prowadzacych.Paths[Derived Column Output]"
+              endId="Package\Informacje o prowadzacych\Sort.Inputs[Sort Input]"
+              name="Derived Column Output"
+              startId="Package\Informacje o prowadzacych\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Informacje o prowadzacych.Paths[OLE DB Source Output]"
+              endId="Package\Informacje o prowadzacych\Derived Column.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Informacje o prowadzacych\Prowadzacy.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Informacje o prowadzacych.Paths[Sort Output]"
+              endId="Package\Informacje o prowadzacych\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Sort Output"
+              startId="Package\Informacje o prowadzacych\Sort.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Informacje o przedmiotach"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{C4B2BE22-1BD7-4A3B-A086-00A51146C458}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Informacje o przedmiotach"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Informacje o przedmiotach\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Informacje o przedmiotach\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Informacje o przedmiotach\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Informacje o przedmiotach\Derived Column.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Informacje o przedmiotach\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Informacje o przedmiotach\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje o przedmiotach\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o przedmiotach\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Informacje o przedmiotach\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o przedmiotach\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Informacje o przedmiotach\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Informacje o przedmiotach\OLE DB Destination.Connections[OleDbConnection]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Informacje o przedmiotach\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <externalMetadataColumns
+                    isUsed="True" />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Informacje o przedmiotach\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Informacje o przedmiotach\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje o przedmiotach\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o przedmiotach\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Informacje o przedmiotach\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o przedmiotach\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Informacje o przedmiotach\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Przedmioty]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Informacje o przedmiotach\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{E8EA4A62-3854-453D-A7C5-839F3B3A7841}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[HAIROX-KOMPUTER.szkola]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Nazwa]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Nazwa]"
+                      length="100"
+                      lineageId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Nazwa]"
+                      name="Nazwa"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Semestr]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Semestr]"
+                      lineageId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Semestr]"
+                      name="Semestr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Ilosc_godzin]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Ilosc_godzin]"
+                      lineageId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Ilosc_godzin]"
+                      name="Ilosc_godzin"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Ilosc_ects]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Ilosc_ects]"
+                      lineageId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Ilosc_ects]"
+                      name="Ilosc_ects"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fk_gl_prowadz]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fk_gl_prowadz]"
+                      lineageId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fk_gl_prowadz]"
+                      name="Fk_gl_prowadz"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Nazwa]"
+                      codePage="1250"
+                      dataType="str"
+                      length="100"
+                      name="Nazwa" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Semestr]"
+                      dataType="i4"
+                      name="Semestr" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Ilosc_godzin]"
+                      dataType="i4"
+                      name="Ilosc_godzin" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Ilosc_ects]"
+                      dataType="i4"
+                      name="Ilosc_ects" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fk_gl_prowadz]"
+                      dataType="i4"
+                      name="Fk_gl_prowadz" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Nazwa]"
+                      codePage="1250"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Nazwa]"
+                      name="Nazwa" />
+                    <outputColumn
+                      refId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Semestr]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Semestr]"
+                      name="Semestr" />
+                    <outputColumn
+                      refId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Ilosc_godzin]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Ilosc_godzin]"
+                      name="Ilosc_godzin" />
+                    <outputColumn
+                      refId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Ilosc_ects]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Ilosc_ects]"
+                      name="Ilosc_ects" />
+                    <outputColumn
+                      refId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fk_gl_prowadz]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fk_gl_prowadz]"
+                      name="Fk_gl_prowadz" />
+                    <outputColumn
+                      refId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Informacje o przedmiotach\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Informacje o przedmiotach\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Informacje o przedmiotach\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Informacje o przedmiotach.Paths[OLE DB Source Output]"
+              endId="Package\Informacje o przedmiotach\Derived Column.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Informacje o przedmiotach\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Informacje o studentach"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{BF083C5E-39E2-4B78-ACE1-162D489E1A55}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Informacje o studentach"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Informacje o studentach\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Informacje o studentach\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Informacje o studentach\Derived Column.Inputs[Derived Column Input].Columns[Imie]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Imie"
+                      lineageId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Imie]" />
+                    <inputColumn
+                      refId="Package\Informacje o studentach\Derived Column.Inputs[Derived Column Input].Columns[Nazwisko]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="Nazwisko"
+                      lineageId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Nazwisko]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Informacje o studentach\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Informacje o studentach\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje o studentach\Derived Column.Outputs[Derived Column Output].Columns[ImieINazwisko]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="128"
+                      lineageId="Package\Informacje o studentach\Derived Column.Outputs[Derived Column Output].Columns[ImieINazwisko]"
+                      name="ImieINazwisko"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Imie]} + " " + #{Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Nazwisko]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">Imie + " " + Nazwisko</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Informacje o studentach\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Informacje o studentach\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje o studentach\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o studentach\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Informacje o studentach\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o studentach\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Informacje o studentach\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Studenci]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Informacje o studentach\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{6D353003-1F89-4389-A92B-2D4D4E32161A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[HAIROX-KOMPUTER.hurtownia_szkola]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Informacje o studentach\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Informacje o studentach\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Nr_indeksu]"
+                      cachedDataType="i4"
+                      cachedName="Nr_indeksu"
+                      externalMetadataColumnId="Package\Informacje o studentach\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Nr_Indeksu]"
+                      lineageId="Package\Informacje o studentach\Sort.Outputs[Sort Output].Columns[Nr_indeksu]" />
+                    <inputColumn
+                      refId="Package\Informacje o studentach\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Pesel]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Pesel"
+                      externalMetadataColumnId="Package\Informacje o studentach\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PESEL]"
+                      lineageId="Package\Informacje o studentach\Sort.Outputs[Sort Output].Columns[Pesel]" />
+                    <inputColumn
+                      refId="Package\Informacje o studentach\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ImieINazwisko]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="128"
+                      cachedName="ImieINazwisko"
+                      externalMetadataColumnId="Package\Informacje o studentach\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ImieINazwisko]"
+                      lineageId="Package\Informacje o studentach\Sort.Outputs[Sort Output].Columns[ImieINazwisko]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Informacje o studentach\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Studenta]"
+                      dataType="i4"
+                      name="ID_Studenta" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o studentach\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Nr_Indeksu]"
+                      dataType="i4"
+                      name="Nr_Indeksu" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o studentach\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PESEL]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="PESEL" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o studentach\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ImieINazwisko]"
+                      codePage="1250"
+                      dataType="str"
+                      length="128"
+                      name="ImieINazwisko" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Informacje o studentach\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Informacje o studentach\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje o studentach\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o studentach\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Informacje o studentach\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o studentach\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Informacje o studentach\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Studenci]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Informacje o studentach\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{E8EA4A62-3854-453D-A7C5-839F3B3A7841}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[HAIROX-KOMPUTER.szkola]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_Studenta]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID_Studenta]"
+                      lineageId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_Studenta]"
+                      name="ID_Studenta"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Nr_indeksu]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Nr_indeksu]"
+                      lineageId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Nr_indeksu]"
+                      name="Nr_indeksu"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Pesel]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Pesel]"
+                      length="20"
+                      lineageId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Pesel]"
+                      name="Pesel"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Imie]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Imie]"
+                      length="20"
+                      lineageId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Imie]"
+                      name="Imie"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Nazwisko]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Nazwisko]"
+                      length="30"
+                      lineageId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Nazwisko]"
+                      name="Nazwisko"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Rok]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Rok]"
+                      lineageId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Rok]"
+                      name="Rok"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Semestr]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Semestr]"
+                      lineageId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Semestr]"
+                      name="Semestr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Dlug_ects]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Dlug_ects]"
+                      lineageId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Dlug_ects]"
+                      name="Dlug_ects"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID_Studenta]"
+                      dataType="i4"
+                      name="ID_Studenta" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Nr_indeksu]"
+                      dataType="i4"
+                      name="Nr_indeksu" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Pesel]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="Pesel" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Imie]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="Imie" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Nazwisko]"
+                      codePage="1250"
+                      dataType="str"
+                      length="30"
+                      name="Nazwisko" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Rok]"
+                      dataType="i4"
+                      name="Rok" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Semestr]"
+                      dataType="i4"
+                      name="Semestr" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Dlug_ects]"
+                      dataType="i4"
+                      name="Dlug_ects" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID_Studenta]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID_Studenta]"
+                      name="ID_Studenta" />
+                    <outputColumn
+                      refId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Nr_indeksu]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Nr_indeksu]"
+                      name="Nr_indeksu" />
+                    <outputColumn
+                      refId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Pesel]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Pesel]"
+                      name="Pesel" />
+                    <outputColumn
+                      refId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Imie]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Imie]"
+                      name="Imie" />
+                    <outputColumn
+                      refId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Nazwisko]"
+                      codePage="1250"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Nazwisko]"
+                      name="Nazwisko" />
+                    <outputColumn
+                      refId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Rok]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Rok]"
+                      name="Rok" />
+                    <outputColumn
+                      refId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Semestr]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Semestr]"
+                      name="Semestr" />
+                    <outputColumn
+                      refId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Dlug_ects]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Dlug_ects]"
+                      name="Dlug_ects" />
+                    <outputColumn
+                      refId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Informacje o studentach\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Informacje o studentach\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Informacje o studentach\Sort.Inputs[Sort Input].Columns[ID_Studenta]"
+                      cachedDataType="i4"
+                      cachedName="ID_Studenta"
+                      lineageId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_Studenta]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o studentach\Sort.Inputs[Sort Input].Columns[Nr_indeksu]"
+                      cachedDataType="i4"
+                      cachedName="Nr_indeksu"
+                      lineageId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Nr_indeksu]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o studentach\Sort.Inputs[Sort Input].Columns[Pesel]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Pesel"
+                      lineageId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Pesel]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o studentach\Sort.Inputs[Sort Input].Columns[ImieINazwisko]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="128"
+                      cachedName="ImieINazwisko"
+                      lineageId="Package\Informacje o studentach\Derived Column.Outputs[Derived Column Output].Columns[ImieINazwisko]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Informacje o studentach\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje o studentach\Sort.Outputs[Sort Output].Columns[ID_Studenta]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o studentach\Sort.Outputs[Sort Output].Columns[ID_Studenta]"
+                      name="ID_Studenta"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_Studenta]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o studentach\Sort.Outputs[Sort Output].Columns[Nr_indeksu]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o studentach\Sort.Outputs[Sort Output].Columns[Nr_indeksu]"
+                      name="Nr_indeksu">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Nr_indeksu]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o studentach\Sort.Outputs[Sort Output].Columns[Pesel]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Informacje o studentach\Sort.Outputs[Sort Output].Columns[Pesel]"
+                      name="Pesel">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output].Columns[Pesel]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o studentach\Sort.Outputs[Sort Output].Columns[ImieINazwisko]"
+                      codePage="1250"
+                      dataType="str"
+                      length="128"
+                      lineageId="Package\Informacje o studentach\Sort.Outputs[Sort Output].Columns[ImieINazwisko]"
+                      name="ImieINazwisko">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Informacje o studentach\Derived Column.Outputs[Derived Column Output].Columns[ImieINazwisko]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Informacje o studentach.Paths[Derived Column Output]"
+              endId="Package\Informacje o studentach\Sort.Inputs[Sort Input]"
+              name="Derived Column Output"
+              startId="Package\Informacje o studentach\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Informacje o studentach.Paths[OLE DB Source Output]"
+              endId="Package\Informacje o studentach\Derived Column.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Informacje o studentach\OLE DB Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Informacje o studentach.Paths[Sort Output]"
+              endId="Package\Informacje o studentach\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Sort Output"
+              startId="Package\Informacje o studentach\Sort.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{A532F820-CBC3-4095-980B-5F68E63E62D7}"
+      DTS:From="Package\Informacje o prowadzacych"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Informacje o studentach" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{6D1EEF29-AFF3-4EA9-9648-8DF06AC71FA1}"
+      DTS:From="Package\Informacje o studentach"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Informacje o przedmiotach" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="211,42"
+          Id="Package\Informacje o prowadzacych"
+          TopLeft="200,27" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Informacje o studentach"
+          TopLeft="211.5,134.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="307.5,69">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65.5"
+              Start="0,0"
+              End="0,58">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="208,42"
+          Id="Package\Informacje o przedmiotach"
+          TopLeft="203,230" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="308.25,176.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.5"
+              Start="0,0"
+              End="0,46">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Informacje o prowadzacych">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="137,42"
+          Id="Package\Informacje o prowadzacych\Prowadzacy"
+          TopLeft="201,66" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Informacje o prowadzacych\OLE DB Destination"
+          TopLeft="182,386" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Informacje o prowadzacych\Derived Column"
+          TopLeft="196,165" />
+        <EdgeLayout
+          Id="Package\Informacje o prowadzacych.Paths[OLE DB Source Output]"
+          TopLeft="271.75,108">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57"
+              Start="0,0"
+              End="0,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="100,42"
+          Id="Package\Informacje o prowadzacych\Sort"
+          TopLeft="220,272" />
+        <EdgeLayout
+          Id="Package\Informacje o prowadzacych.Paths[Derived Column Output]"
+          TopLeft="272,207">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65"
+              Start="0,0"
+              End="0,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o prowadzacych.Paths[Sort Output]"
+          TopLeft="269.25,314">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,72"
+              Start="0,0"
+              End="0,64.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,64.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Informacje o prowadzacych\Prowadzacy">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Informacje o prowadzacych\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Informacje o studentach">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Informacje o studentach\OLE DB Source"
+          TopLeft="195,54" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Informacje o studentach\Derived Column"
+          TopLeft="188,156" />
+        <EdgeLayout
+          Id="Package\Informacje o studentach.Paths[OLE DB Source Output]"
+          TopLeft="268.5,96">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="100,42"
+          Id="Package\Informacje o studentach\Sort"
+          TopLeft="214,263" />
+        <EdgeLayout
+          Id="Package\Informacje o studentach.Paths[Derived Column Output]"
+          TopLeft="265,198">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65"
+              Start="0,0"
+              End="0,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Informacje o studentach\OLE DB Destination"
+          TopLeft="174,373" />
+        <EdgeLayout
+          Id="Package\Informacje o studentach.Paths[Sort Output]"
+          TopLeft="262.25,305">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,68"
+              Start="0,0"
+              End="0,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Informacje o studentach\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Informacje o studentach\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Informacje o przedmiotach">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Informacje o przedmiotach\OLE DB Source"
+          TopLeft="272,71" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Informacje o przedmiotach\OLE DB Destination"
+          TopLeft="260,369" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Informacje o przedmiotach\Derived Column"
+          TopLeft="270,172" />
+        <NodeLayout
+          Size="100,42"
+          Id="Package\Informacje o przedmiotach\Sort"
+          TopLeft="299,268" />
+        <EdgeLayout
+          Id="Package\Informacje o przedmiotach.Paths[OLE DB Source Output]"
+          TopLeft="348,113">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59"
+              Start="0,0"
+              End="0,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Informacje o przedmiotach\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
