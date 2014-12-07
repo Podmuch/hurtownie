@@ -1,0 +1,317 @@
+10;Ergonomia;laboratorium;45;1
+11;Geometria wykreślna I;wykład;30;9
+12;Historia architektury powszechnej I;projekt;15;3
+13;Historia architektury powszechnej I;projekt;15;3
+14;Matematyka I;laboratorium;45;9
+15;Materiałoznawstwo budowlane I;wykład;30;1
+16;Materiałoznawstwo budowlane I;laboratorium;15;4
+17;Materiałoznawstwo budowlane I;laboratorium;15;3
+18;Projektowanie architektoniczne I;projekt;15;6
+19;Rysunek architektoniczny, techniki graficzne;ćwiczenia;15;7
+20;Rysunek, malarstwo I;wykład;45;6
+21;Techniki komputerowe w projektowaniu I;laboratorium;45;6
+22;Techniki komputerowe w projektowaniu I;laboratorium;15;4
+23;Budownictwo ogólne I;ćwiczenia;30;7
+24;Budownictwo ogólne I;wykład;15;3
+25;Geometria wykreślna II;ćwiczenia;45;7
+26;Geometria wykreślna II;ćwiczenia;15;4
+27;Historia architektury powszechnej II;projekt;60;2
+28;Matematyka II;laboratorium;45;7
+29;Matematyka II;wykład;15;5
+30;Materiałoznawstwo budowlane II;projekt;15;7
+31;Materiałoznawstwo budowlane II;projekt;30;5
+32;Mechanika budowli;wykład;15;1
+33;Praktyka budowlana ;laboratorium;15;4
+34;Praktyka budowlana ;ćwiczenia;15;8
+35;Projektowanie architektoniczne II;laboratorium;45;9
+36;Rysunek, malarstwo II;ćwiczenia;30;2
+37;Techniki komputerowe w projektowaniu II;projekt;15;8
+38;Techniki komputerowe w projektowaniu II;wykład;15;5
+39;Budownictwo ogólne II;ćwiczenia;15;6
+40;Historia architektury powszechnej III;ćwiczenia;60;5
+41;Historia urbanistyki I;laboratorium;15;9
+42;Historia urbanistyki I;ćwiczenia;45;3
+43;Mechanika budowli - wstęp do konstrukcji II;projekt;15;6
+44;Projektowanie architektoniczne III;laboratorium;60;1
+45;Projektowanie ruralistyczne;projekt;45;5
+46;Rysunek, malarstwo III;laboratorium;15;0
+47;Rysunek, malarstwo III;ćwiczenia;15;1
+48;Teoria projektowania ruralistycznego;laboratorium;30;1
+49;Teoria projektowania ruralistycznego;ćwiczenia;15;4
+50;Architektura współczesna I;ćwiczenia;45;3
+51;Budownictwo ogólne III;projekt;15;9
+52;Budownictwo ogólne III;laboratorium;15;7
+53;Historia urbanistyki II;ćwiczenia;15;8
+54;Historia urbanistyki II;projekt;15;5
+55;Konstrukcje budowlane I;projekt;15;2
+56;Konstrukcje budowlane I;laboratorium;15;6
+57;Konstrukcje budowlane I;laboratorium;15;0
+58;Projektowanie architektoniczne IV;wykład;15;3
+59;Projektowanie architektoniczne IV;wykład;15;2
+60;Projektowanie urbanistyczne I;projekt;45;7
+61;Projektowanie urbanistyczne I;projekt;15;2
+62;Rysunek, malarstwo IV;wykład;15;4
+63;Rysunek, malarstwo IV;projekt;45;0
+64;Rzeźba I;ćwiczenia;60;9
+65;Socjologia środowiska zbudowanego I;laboratorium;30;6
+66;Teoria projektowania architektonicznego I;ćwiczenia;45;0
+67;Teoria projektowania architektonicznego I;wykład;15;9
+68;Akustyka architektoniczna i urbanistyczna I;wykład;15;3
+69;Akustyka architektoniczna i urbanistyczna I;wykład;15;5
+70;Budownictwo ogólne IV;laboratorium;15;5
+71;Budownictwo ogólne IV;ćwiczenia;15;0
+72;Fizyka budowli I;wykład;30;4
+73;Historia architektury polskiej I;wykład;30;3
+74;Historia architektury polskiej I;wykład;15;2
+75;Historia architektury polskiej I;projekt;15;1
+76;Inżynieria drogowa;laboratorium;30;3
+77;Kompozycja materiałowo-fakturowo-kolorystyczna w architekturze I;ćwiczenia;60;4
+78;Konstrukcje budowlane II;ćwiczenia;30;2
+79;Percepcja przestrzeni;ćwiczenia;30;5
+80;Projektowanie architektonicze V;wykład;45;8
+81;Projektowanie architektonicze V;ćwiczenia;15;2
+82;Projektowanie urbanistyczne II;laboratorium;30;9
+83;Projektowanie urbanistyczne II;laboratorium;15;9
+84;Projektowanie urbanistyczne II;laboratorium;15;6
+85;Rzeźba II;ćwiczenia;30;4
+86;Rzeźba II;projekt;15;9
+87;Rzeźba II;wykład;15;6
+88;Akustyka architektoniczna i urbanistyczna II;laboratorium;60;5
+89;Architektura krajobrazu;projekt;60;8
+90;Fizyka budowli II;wykład;60;9
+91;Historia architektury polskiej II;laboratorium;15;8
+92;Historia architektury polskiej II;laboratorium;15;8
+93;Instalacje budowlane;projekt;30;6
+94;Inżynieria miejska (infrastruktura);laboratorium;15;7
+95;Inżynieria miejska (infrastruktura);ćwiczenia;15;5
+96;Inżynieria miejska (infrastruktura);laboratorium;15;0
+97;Organizacja procesów projektowych i procesów inwestycyjnych;projekt;15;1
+98;Projektowanie architektoniczne VI;projekt;30;2
+99;Ekonomika projektowania;ćwiczenia;15;9
+100;Ekonomika projektowania;wykład;15;7
+101;Etyka zawodu architekta;laboratorium;15;6
+102;Etyka zawodu architekta;projekt;15;6
+103;Historia sztuki I;ćwiczenia;15;1
+104;Podstawy samorządności terytorialnej;laboratorium;15;0
+105;Prawodawstwo: Prawo budowlane;laboratorium;45;3
+106;Prawodawstwo: Prawo budowlane;ćwiczenia;15;9
+107;Teoria regionalistyki, projektowanie i planowanie regionalne;ćwiczenia;30;9
+108;Teoria regionalistyki, projektowanie i planowanie regionalne;ćwiczenia;15;0
+109;Algorytmy grafowe;ćwiczenia;15;1
+110;Algorytmy optymalizacji dyskretnej;wykład;15;2
+111;Algorytmy równoległe i rozproszone;projekt;60;6
+112;Języki programowania na platformie .NET;projekt;15;6
+113;Języki skryptowe i ich zastosowania;laboratorium;60;7
+114;Modelowanie Internetu;wykład;15;5
+115;Obliczenia kwantowe;projekt;15;7
+116;Obliczenia kwantowe;projekt;15;7
+117;Obliczenia kwantowe;wykład;15;2
+118;Obliczenia kwantowe;laboratorium;15;7
+119;Podstawy kryptografii;wykład;30;5
+120;Podstawy programowania;wykład;30;5
+121;Programowanie lokalnych aplikacji .NET;projekt;15;9
+122;Programowanie lokalnych aplikacji .NET;laboratorium;15;6
+123;Realizacja aplikacji internetowych;ćwiczenia;15;1
+124;Synteza aplikacji biznesowych;ćwiczenia;15;9
+125;Systemy z bazą wiedzy;wykład;15;5
+126;Technologie internetowe w Javie;ćwiczenia;30;7
+127;Technologie internetowe w Javie;ćwiczenia;30;8
+128;Wybrane problemy algorytmiczne i technologiczne;wykład;30;6
+129;Wybrane problemy algorytmiczne i technologiczne;ćwiczenia;15;8
+130;Zaawansowane techniki obiektowe;wykład;45;6
+131;Animacja Komputerowa;laboratorium;45;4
+132;Biblioteki Cyfrowe;laboratorium;30;1
+133;Biblioteki Cyfrowe;projekt;15;9
+134;Dokumenty Cyfrowe;projekt;15;5
+135;Dokumenty Cyfrowe;projekt;15;4
+136;Dokumenty Cyfrowe;ćwiczenia;15;6
+137;Grafika Komputerowa;projekt;30;8
+138;Grafika Komputerowa;laboratorium;30;6
+139;Grafika Trójwymiarowa;ćwiczenia;15;9
+140;Hipertekst i Hipermedia;projekt;15;9
+141;Jakość Systemów Informacyjnych;projekt;60;1
+142;Języki Programowania;laboratorium;45;3
+143;Konstrukcja Kompilatorów;projekt;15;7
+144;Metody Reprezentacji Informacji;projekt;60;6
+145;Multimedia i Interfejsy;laboratorium;15;5
+146;Multimedialne Systemy Interaktywne;laboratorium;30;5
+147;Problemy i Zastosowania Informatyki;ćwiczenia;30;1
+148;Problemy i Zastosowania Informatyki;ćwiczenia;15;6
+149;Projektowanie gier komputerowych;projekt;15;2
+150;Przetwarzanie Języka Naturalnego;laboratorium;60;7
+151;Przetwarzanie Obrazów;wykład;15;0
+152;Rzeczywistość Wirtualna;projekt;15;2
+153;Systemy Graficzne;ćwiczenia;45;3
+154;Systemy Graficzne;laboratorium;15;2
+155;Systemy Uczące się;wykład;15;1
+156;Systemy Uczące się;laboratorium;45;8
+157;Sztuczna Inteligencja;ćwiczenia;45;4
+158;Sztuczna Inteligencja;projekt;15;9
+159;Widzenie Komputerowe;projekt;30;2
+160;Widzenie Komputerowe;wykład;15;0
+161;Wirtualne Zespoły Robocze;wykład;45;4
+162;Wizualizacja Informacji;ćwiczenia;30;8
+163;Wizualizacja Informacji;ćwiczenia;15;6
+164;Wizualizacja Informacji;laboratorium;15;0
+165;Administrowanie systemami komputerowymi;laboratorium;45;4
+166;Administrowanie systemami komputerowymi;projekt;15;9
+167;Aplikacje mobilne w środowisku JME;laboratorium;15;3
+168;Aplikacje mobilne w środowisku JME;laboratorium;45;9
+169;Architektura komputerów;ćwiczenia;45;1
+170;Architektury Komputerów i Systemy Operacyjne;wykład;30;9
+171;Architektury Usług Internetowych;projekt;30;9
+172;Architektury Usług Internetowych;wykład;15;2
+173;Automatyzacja procesów biznesowych;ćwiczenia;15;7
+174;Automatyzacja procesów biznesowych;wykład;15;0
+175;Bezpieczeństwo Systemów Komputerowych;laboratorium;45;6
+176;Bezpieczeństwo Systemów Komputerowych;ćwiczenia;15;0
+177;Biznes elektroniczny;wykład;45;9
+178;Inteligentne usługi informacyjne;projekt;15;0
+179;Jakość Oprogramowania;projekt;60;3
+180;Metodologia OpenSource;wykład;45;2
+181;Metodologia OpenSource;wykład;15;9
+182;Narzędzia i aplikacje Java EE;wykład;15;8
+183;Nowoczesne Technologie Przemysłowe;projekt;15;0
+184;Nowoczesne Technologie Przemysłowe;projekt;15;2
+185;Oprogramowanie Systemowe;laboratorium;45;3
+186;Oprogramowanie Systemowe;laboratorium;15;3
+187;Platformy technologiczne;laboratorium;45;0
+188;Programowanie w internecie;wykład;15;0
+189;Programowanie w internecie;wykład;15;8
+190;Programowanie w internecie;projekt;15;8
+191;Projektowanie aplikacji internetowych;laboratorium;15;6
+192;Projektowanie aplikacji internetowych;laboratorium;15;7
+193;Projektowanie aplikacji internetowych;wykład;15;9
+194;Projektowanie aplikacji internetowych;laboratorium;15;7
+195;Projektowanie Systemów Dedykowanych;projekt;60;9
+196;Przetwarzanie rozproszone;projekt;30;5
+197;Przetwarzanie rozproszone;laboratorium;15;5
+198;Przetwarzanie Równoległe CUDA/CELL;laboratorium;30;5
+199;Przetwarzanie Równoległe CUDA/CELL;laboratorium;30;5
+200;Przetwarzanie zespołowe;laboratorium;15;7
+201;Przetwarzanie zespołowe;projekt;30;0
+202;Rozproszone bazy danych;projekt;15;7
+203;Serwisy internetowe .NET;projekt;30;7
+204;Systemy Agentowe;projekt;30;9
+205;Systemy Agentowe;projekt;30;5
+206;Systemy Obliczeniowe Wysokiej Wydajności;wykład;15;9
+207;Systemy Obliczeniowe Wysokiej Wydajności;laboratorium;15;8
+208;Wytwarzanie Aplikacji Internetowych;projekt;15;3
+209;Aplikacje Baz Danych;wykład;15;5
+210;Bazy Danych;laboratorium;30;5
+211;Bazy Danych;laboratorium;15;6
+212;Bazy Wiedzy;ćwiczenia;15;3
+213;Bezpieczeństwo Systemów;laboratorium;30;4
+214;Bezpieczeństwo Systemów;wykład;30;8
+215;Eksploracja Danych;ćwiczenia;30;1
+216;Eksploracja Danych;wykład;15;8
+217;Eksploracja Danych;wykład;15;3
+218;Hurtownie Danych;wykład;30;3
+219;Hurtownie Danych;projekt;30;9
+220;Integracja Systemów;laboratorium;15;1
+221;Inżynieria Oprogramowania;projekt;15;4
+222;Inżynieria Oprogramowania;ćwiczenia;45;5
+223;Inżynieria Wymagań;projekt;60;5
+224;Modelowanie i Analiza Systemów;projekt;15;0
+225;Modelowanie i Analiza Systemów;ćwiczenia;15;6
+226;Nierelacyjne Bazy Danych;ćwiczenia;15;5
+227;Nierelacyjne Bazy Danych;ćwiczenia;30;2
+228;Projektowanie Systemów Obiektowych;ćwiczenia;30;2
+229;Projektowanie Systemów Obiektowych;ćwiczenia;15;0
+230;Społeczne Aspekty Informatyki;projekt;15;4
+231;Społeczne Aspekty Informatyki;projekt;15;5
+232;Strategie Informatyzacji;laboratorium;15;5
+233;Struktury Baz Danych;laboratorium;60;1
+234;Systemy Operacyjne;projekt;30;9
+235;Systemy Operacyjne;wykład;15;7
+236;Systemy Operacyjne;wykład;15;6
+237;Warsztat Profesjonalisty;ćwiczenia;15;5
+238;Wykłady Monograficzne;wykład;45;6
+239;Zaawansowane Technologie Baz Danych;wykład;30;3
+240;Zaawansowane Technologie Baz Danych;ćwiczenia;15;4
+241;Zapewnianie Jakości Oprogramowania;wykład;15;4
+242;Zapewnianie Jakości Oprogramowania;wykład;45;9
+243;Zarządzanie Ewolucją Oprogramowania;ćwiczenia;15;4
+244;Zarządzanie Projektem Informatycznym;projekt;30;0
+245;Zarządzanie Projektem Informatycznym;ćwiczenia;30;2
+246;Zarządzanie Systemami Baz Danych;ćwiczenia;15;9
+247;Zarządzanie Systemami Baz Danych;ćwiczenia;15;4
+248;Zarządzanie Systemami Baz Danych;ćwiczenia;15;5
+249;Analiza ekonomiczna;projekt;30;7
+250;Analiza ekonomiczna;projekt;30;3
+251;Financial analysis of business;wykład;15;3
+252;Financial analysis of business;projekt;15;8
+253;International Finance;projekt;15;6
+254;International Financial Management;ćwiczenia;45;4
+255;International Financial Management;laboratorium;15;0
+256;Modele ubezpieczeń zdrowotnych w Europie;laboratorium;45;3
+257;Modele ubezpieczeń zdrowotnych w Europie;wykład;15;6
+258;Modelowanie upadłości firm;wykład;30;5
+259;Modelowanie upadłości firm;ćwiczenia;15;0
+260;Niematerialna wartość firmy;ćwiczenia;45;6
+261;Niematerialna wartość firmy;projekt;15;7
+262;Rachunkowość finansowa;laboratorium;45;4
+263;Rachunkowość finansowa;projekt;15;9
+264;Rachunkowość przedsiębiorstw;projekt;30;9
+265;Rachunkowość zarządcza;ćwiczenia;45;8
+266;Rachunkowość zarządcza;projekt;15;5
+267;Wprowadzenie do rachunkowości;ćwiczenia;30;9
+268;Wprowadzenie do rachunkowości;ćwiczenia;15;0
+269;Podstawy marketingu;ćwiczenia;15;7
+270;Badania marketingowe;projekt;15;6
+271;Badania marketingowe;laboratorium;15;2
+272;Wprowadzenie do marketingu;wykład;15;6
+273;Reklama;laboratorium;60;3
+274;Marketing przemysłowy;wykład;15;5
+275;Marketing międzynarodowy;ćwiczenia;15;3
+276;Marketing usług;laboratorium;15;1
+277;Marketing usług;laboratorium;15;3
+278;Marketing usług;laboratorium;15;4
+279;Media a zachowania rynkowe konsumentów;projekt;45;8
+280;Marketing w turystyce;laboratorium;15;4
+281;Marketing relacji;projekt;15;8
+282;E-marketing;projekt;15;4
+283;E-marketing;laboratorium;15;4
+284;E-marketing;ćwiczenia;15;7
+285;Zarządzanie sprzedażą;wykład;15;9
+286;Zarządzanie sprzedażą;laboratorium;15;6
+287;Zarządzanie sprzedażą;projekt;15;8
+288;Analiza rynku;laboratorium;15;1
+289;Analiza rynku;laboratorium;15;3
+290;Projektowanie systemów marketingu;projekt;45;7
+291;E-administracja;laboratorium;15;8
+292;E-administracja;projekt;15;4
+293;Turystyka międzynarodowa;laboratorium;15;7
+294;Ekonometria;ćwiczenia;45;9
+295;Ekonometria;projekt;15;3
+296;Ekonomia;laboratorium;30;2
+297;Ekonomia;laboratorium;30;5
+298;Ekonomika przedsiębiorstwa;ćwiczenia;15;3
+299;Ekonomika przedsiębiorstwa;projekt;15;8
+300;Ekonomika przedsiębiorstwa;laboratorium;30;5
+301;Ekonomika środowiska;laboratorium;15;5
+302;Ekonomika środowiska;laboratorium;30;9
+303;Ekonomika środowiska;ćwiczenia;15;7
+304;Finansowanie działalności MSP;ćwiczenia;15;3
+305;Finansowanie działalności MSP;laboratorium;15;6
+306;Funkcjonowanie i rola MSP w gospodarce;projekt;15;4
+307;Integracja ekonomiczna Europy;laboratorium;15;4
+308;Integracja ekonomiczna Europy;wykład;15;5
+309;Introductory econometrics;projekt;60;1
+310;Makroekonomia;wykład;60;7
+311;Mikroekonomia;laboratorium;30;9
+312;Mikroekonomia;projekt;15;0
+313;Podstawy franchisingu;ćwiczenia;15;1
+314;Podstawy statystyki;ćwiczenia;30;2
+315;Polityka społeczna;laboratorium;30;8
+316;Prognozowanie gospodarcze;ćwiczenia;30;6
+317;Prognozowanie gospodarcze;laboratorium;15;1
+318;Prognozowanie gospodarcze;laboratorium;15;3
+319;Prognozowanie i symulacje;wykład;30;8
+320;Prognozowanie i symulacje;laboratorium;30;8
+321;Rachunek kosztów;ćwiczenia;45;8
+322;Rachunek kosztów;projekt;15;5
+323;Rachunkowość;wykład;15;6
+324;Statystyka;laboratorium;30;8
+325;Statystyka;wykład;15;4
+326;Ubezpieczenia gospodarcze;projekt;60;7
