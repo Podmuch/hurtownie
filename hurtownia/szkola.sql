@@ -28,12 +28,12 @@ CREATE TABLE Prowadzacy(
 	ID_Daty_Wygasniecia datetime,
 	ID_Przelozonego INTEGER FOREIGN KEY REFERENCES Prowadzacy,
 	Aktualnosc varchar(15),
-	PESEL varchar(11),
+	PESEL varchar(20),
 	ImieINazwisko varchar(128),
 	PrzedzialWiekowy varchar(20),
 	PrzedzialStazu varchar(20),
-	Katedra varchar(50),
-	Wydzial varchar(50),
+	Katedra varchar(100),
+	Wydzial varchar(100),
 	Tytul varchar(50),
 )
 GO
@@ -41,14 +41,14 @@ GO
 CREATE TABLE Studenci(
 	ID_Studenta INTEGER IDENTITY(1,1) PRIMARY KEY,
 	Nr_Indeksu INTEGER,
-	PESEL varchar(11),
+	PESEL varchar(20),
 	ImieINazwisko varchar(128),
 )
 GO
 
 CREATE TABLE Przedmioty(
 	ID_Przedmiotu INTEGER IDENTITY(1,1) PRIMARY KEY,
-	Nazwa_Przedmiotu varchar(50),
+	Nazwa_Przedmiotu varchar(100),
 	ID_Odpowiedzialnego INTEGER FOREIGN KEY REFERENCES Prowadzacy,
 	PrzedzialIlosciGodzin varchar(20),
 	PrzedzialIlosciEcts varchar(20),
@@ -64,7 +64,7 @@ CREATE TABLE SkladowePrzedmiotu(
 	ID_Przedmiotu INTEGER FOREIGN KEY REFERENCES Przedmioty,
 	Aktualnosc varchar(15),
 	PrzedzialIlosciGodzin varchar(20),
-	Nazwa_Skladowej varchar(50) not null,
+	Nazwa_Skladowej varchar(100) not null,
 )
 GO
 
