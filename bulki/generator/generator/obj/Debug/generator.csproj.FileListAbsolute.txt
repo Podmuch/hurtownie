@@ -53,3 +53,6 @@ C:\Users\Dominik\Desktop\Infromatyka Semestr V\Hurtownie Danych\Projekt\generato
 C:\Users\Dominik\Desktop\Infromatyka Semestr V\Hurtownie Danych\Projekt\generator\hd_generator\hd_generator\generator\generator\obj\Debug\generator.g.resources
 C:\Users\Dominik\Desktop\Infromatyka Semestr V\Hurtownie Danych\Projekt\generator\hd_generator\hd_generator\generator\generator\obj\Debug\generator.Properties.Resources.resources
 C:\Users\Dominik\Desktop\Infromatyka Semestr V\Hurtownie Danych\Projekt\generator\hd_generator\hd_generator\generator\generator\obj\Debug\generator.csproj.GenerateResource.Cache
+C:\hurtownie\bulki\generator\generator\bin\Debug\generator.exe.config
+C:\hurtownie\bulki\generator\generator\obj\Debug\generator.exe
+C:\hurtownie\bulki\generator\generator\obj\Debug\generator.pdb

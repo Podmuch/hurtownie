@@ -23,7 +23,7 @@ CREATE TABLE Data
 GO
 
 CREATE TABLE Prowadzacy(
-	ID_Prowadz¹cego INTEGER IDENTITY(1,1) PRIMARY KEY,
+	ID_Prowadz¹cego INTEGER IDENTITY(0,1) PRIMARY KEY,
 	ID_Daty_Wstawienia datetime not null,
 	ID_Daty_Wygasniecia datetime,
 	ID_Przelozonego INTEGER FOREIGN KEY REFERENCES Prowadzacy,
@@ -47,7 +47,7 @@ CREATE TABLE Studenci(
 GO
 
 CREATE TABLE Przedmioty(
-	ID_Przedmiotu INTEGER IDENTITY(1,1) PRIMARY KEY,
+	ID_Przedmiotu INTEGER IDENTITY(0,1) PRIMARY KEY,
 	Nazwa_Przedmiotu varchar(100),
 	ID_Odpowiedzialnego INTEGER FOREIGN KEY REFERENCES Prowadzacy,
 	PrzedzialIlosciGodzin varchar(20),
