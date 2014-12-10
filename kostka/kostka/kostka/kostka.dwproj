@@ -6,10 +6,79 @@
     <Name>kostka.database</Name>
     <FullPath>kostka.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>Hurtownia Szkola.cube</Name>
+      <FullPath>Hurtownia Szkola.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>Hurtownia Szkola.partitions</Name>
+          <FullPath>Hurtownia Szkola.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
+  <Dimensions>
+    <ProjectItem>
+      <Name>Przedmioty.dim</Name>
+      <FullPath>Przedmioty.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Studenci.dim</Name>
+      <FullPath>Studenci.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Skladowe Przedmiotu.dim</Name>
+      <FullPath>Skladowe Przedmiotu.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Prowadzacy.dim</Name>
+      <FullPath>Prowadzacy.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Data.dim</Name>
+      <FullPath>Data.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Czas.dim</Name>
+      <FullPath>Czas.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Uzyskane Oceny.dim</Name>
+      <FullPath>Uzyskane Oceny.dim</FullPath>
+    </ProjectItem>
+  </Dimensions>
+  <DataSources>
+    <ProjectItem>
+      <Name>Hurtownia Szkola.ds</Name>
+      <FullPath>Hurtownia Szkola.ds</FullPath>
+    </ProjectItem>
+  </DataSources>
+  <DataSourceViews>
+    <ProjectItem>
+      <Name>Hurtownia Szkola.dsv</Name>
+      <FullPath>Hurtownia Szkola.dsv</FullPath>
+    </ProjectItem>
+  </DataSourceViews>
   <Configurations>
     <Configuration>
       <Name>Development</Name>
-      <Options />
+      <Options>
+        <ConnectionMappings>
+          <ConfigurationSetting>
+            <Id>Hurtownia Szkola</Id>
+            <Name>Hurtownia Szkola</Name>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=HAIROX-KOMPUTER;Integrated Security=SSPI;Initial Catalog=hurtownia_szkola</Value>
+          </ConfigurationSetting>
+        </ConnectionMappings>
+        <ConnectionSecurityMappings>
+          <ConfigurationSetting>
+            <Id>Hurtownia Szkola</Id>
+            <Name>Hurtownia Szkola</Name>
+            <Value xsi:type="xsd:int">0</Value>
+          </ConfigurationSetting>
+        </ConnectionSecurityMappings>
+      </Options>
     </Configuration>
   </Configurations>
 </Project>

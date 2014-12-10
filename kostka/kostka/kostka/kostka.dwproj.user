@@ -3,8 +3,8 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
-        <TargetServer>localhost</TargetServer>
-        <TargetDatabase>kostka</TargetDatabase>
+        <TargetServer>HAIROX-KOMPUTER\ANALYS</TargetServer>
+        <TargetDatabase>hurtownia</TargetDatabase>
         <StartObject>
           <ObjectId></ObjectId>
           <ObjectType>Current</ObjectType>
