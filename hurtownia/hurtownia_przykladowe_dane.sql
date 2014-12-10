@@ -360,11 +360,11 @@ insert into dbo.Studenci("ImieINazwisko", "PESEL") values ('And¿elika Bia³ogórsk
 -- Przedmioty
 
 insert into dbo.Przedmioty("ID_Odpowiedzialnego", "Nazwa_Przedmiotu", "PrzedzialIlosciEcts", "PrzedzialIlosciGodzin", "Semestr")
-		 values (2, 'Podstawy marketingu', 'od 0 do 3', 'od 30 do 45', '2');
+		 values (1, 'Podstawy marketingu', 'od 0 do 3', 'od 30 do 45', '2');
 insert into dbo.Przedmioty("ID_Odpowiedzialnego", "Nazwa_Przedmiotu", "PrzedzialIlosciEcts", "PrzedzialIlosciGodzin", "Semestr")
-		 values (2, 'Badania marketingowe', 'od 0 do 3', 'od 15 do 30', '2');
+		 values (1, 'Badania marketingowe', 'od 0 do 3', 'od 15 do 30', '2');
 insert into dbo.Przedmioty("ID_Odpowiedzialnego", "Nazwa_Przedmiotu", "PrzedzialIlosciEcts", "PrzedzialIlosciGodzin", "Semestr")
-		 values (3, 'Reklama', 'od 0 do 3', 'od 0 do 15', '2');
+		 values (2, 'Reklama', 'od 0 do 3', 'od 0 do 15', '2');
 
 -- SkladowePrzedmiotu
 
@@ -373,13 +373,13 @@ insert into dbo.SkladowePrzedmiotu("ID_Odpowiedzialnego", "ID_Przedmiotu", "Nazw
 insert into dbo.SkladowePrzedmiotu("ID_Odpowiedzialnego", "ID_Przedmiotu", "Nazwa_Skladowej", "PrzedzialIlosciGodzin", "Data_Wstawienia", "Data_Wygasniecia", "Aktualnosc")
 		 values (2, 1, 'Laboratorium', 'od 0 do 15', '2011-01-01 00:00:00.000', null, 'tak');
 insert into dbo.SkladowePrzedmiotu("ID_Odpowiedzialnego", "ID_Przedmiotu", "Nazwa_Skladowej", "PrzedzialIlosciGodzin", "Data_Wstawienia", "Data_Wygasniecia", "Aktualnosc")
-		 values (3, 1, 'Wyk³ad', 'od 0 do 15', '2011-01-01 00:00:00.000', null, 'tak');
+		 values (0, 1, 'Wyk³ad', 'od 0 do 15', '2011-01-01 00:00:00.000', null, 'tak');
 insert into dbo.SkladowePrzedmiotu("ID_Odpowiedzialnego", "ID_Przedmiotu", "Nazwa_Skladowej", "PrzedzialIlosciGodzin", "Data_Wstawienia", "Data_Wygasniecia", "Aktualnosc")
 		 values (2, 2, 'Cwiczenia', 'od 0 do 15', '2011-01-01 00:00:00.000', null, 'tak');
 insert into dbo.SkladowePrzedmiotu("ID_Odpowiedzialnego", "ID_Przedmiotu", "Nazwa_Skladowej", "PrzedzialIlosciGodzin", "Data_Wstawienia", "Data_Wygasniecia", "Aktualnosc")
-		 values (3, 2, 'Wyk³ad', 'od 0 do 15', '2011-01-01 00:00:00.000', null, 'tak');
+		 values (0, 2, 'Wyk³ad', 'od 0 do 15', '2011-01-01 00:00:00.000', null, 'tak');
 insert into dbo.SkladowePrzedmiotu("ID_Odpowiedzialnego", "ID_Przedmiotu", "Nazwa_Skladowej", "PrzedzialIlosciGodzin", "Data_Wstawienia", "Data_Wygasniecia", "Aktualnosc")
-		 values (3, 3, 'Wyk³ad', 'od 0 do 15', '2011-01-01 00:00:00.000', null, 'tak');
+		 values (0, 0, 'Wyk³ad', 'od 0 do 15', '2011-01-01 00:00:00.000', null, 'tak');
 
 -- Wyniki
 
@@ -391,9 +391,9 @@ insert into dbo.Wyniki("ID_Przedmiotu","ID_Studenta", "Wynik") values (2, 1, '4'
 insert into dbo.Wyniki("ID_Przedmiotu","ID_Studenta", "Wynik") values (2, 2, '3');
 insert into dbo.Wyniki("ID_Przedmiotu","ID_Studenta", "Wynik") values (2, 3, '4');
 
-insert into dbo.Wyniki("ID_Przedmiotu","ID_Studenta", "Wynik") values (3, 1, '5');
-insert into dbo.Wyniki("ID_Przedmiotu","ID_Studenta", "Wynik") values (3, 2, '4');
-insert into dbo.Wyniki("ID_Przedmiotu","ID_Studenta", "Wynik") values (3, 3, '3');
+insert into dbo.Wyniki("ID_Przedmiotu","ID_Studenta", "Wynik") values (0, 1, '5');
+insert into dbo.Wyniki("ID_Przedmiotu","ID_Studenta", "Wynik") values (0, 2, '4');
+insert into dbo.Wyniki("ID_Przedmiotu","ID_Studenta", "Wynik") values (0, 3, '3');
 
 -- UzyskaneOceny
 
@@ -404,17 +404,17 @@ insert into dbo.UzyskaneOceny( "ID_Czasu", "ID_Daty", "ID_Protokolu_z_Ocena", "I
 insert into dbo.UzyskaneOceny( "ID_Czasu", "ID_Daty", "ID_Protokolu_z_Ocena", "ID_Prowadzacego", "ID_Skladowej", "ID_Studenta", "Mozliwe_Punkty_do_Uzyskania", "Obecnosc", "Wynik_Procentowy", "Wynik_Punktowy")
 			values (1, 1, 3, 2, 3, 1, 20, 1, 85, 17);
 insert into dbo.UzyskaneOceny( "ID_Czasu", "ID_Daty", "ID_Protokolu_z_Ocena", "ID_Prowadzacego", "ID_Skladowej", "ID_Studenta", "Mozliwe_Punkty_do_Uzyskania", "Obecnosc", "Wynik_Procentowy", "Wynik_Punktowy")
-			values (1, 1, 4, 3, 4, 2, 10, 1, 10, 1);
+			values (1, 1, 4, 0, 4, 2, 10, 1, 10, 1);
 insert into dbo.UzyskaneOceny( "ID_Czasu", "ID_Daty", "ID_Protokolu_z_Ocena", "ID_Prowadzacego", "ID_Skladowej", "ID_Studenta", "Mozliwe_Punkty_do_Uzyskania", "Obecnosc", "Wynik_Procentowy", "Wynik_Punktowy")
-			values (1, 1, 5, 3, 5, 2, 10, 1, 90, 9);
+			values (1, 1, 5, 0, 5, 2, 10, 1, 90, 9);
 insert into dbo.UzyskaneOceny( "ID_Czasu", "ID_Daty", "ID_Protokolu_z_Ocena", "ID_Prowadzacego", "ID_Skladowej", "ID_Studenta", "Mozliwe_Punkty_do_Uzyskania", "Obecnosc", "Wynik_Procentowy", "Wynik_Punktowy")
-			values (1, 1, 6, 3, 6, 3, 10, 1, 100, 10);
+			values (1, 1, 6, 0, 6, 3, 10, 1, 100, 10);
 insert into dbo.UzyskaneOceny( "ID_Czasu", "ID_Daty", "ID_Protokolu_z_Ocena", "ID_Prowadzacego", "ID_Skladowej", "ID_Studenta", "Mozliwe_Punkty_do_Uzyskania", "Obecnosc", "Wynik_Procentowy", "Wynik_Punktowy")
 			values (1, 1, 7, 1, 1, 3, 10, 1, 80, 8);
 insert into dbo.UzyskaneOceny( "ID_Czasu", "ID_Daty", "ID_Protokolu_z_Ocena", "ID_Prowadzacego", "ID_Skladowej", "ID_Studenta", "Mozliwe_Punkty_do_Uzyskania", "Obecnosc", "Wynik_Procentowy", "Wynik_Punktowy")
 			values (1, 1, 8, 2, 2, 3, 10, 1, 40, 4);
 insert into dbo.UzyskaneOceny( "ID_Czasu", "ID_Daty", "ID_Protokolu_z_Ocena", "ID_Prowadzacego", "ID_Skladowej", "ID_Studenta", "Mozliwe_Punkty_do_Uzyskania", "Obecnosc", "Wynik_Procentowy", "Wynik_Punktowy")
-			values (1, 1, 9, 3, 3, 3, 10, 1, 50, 5);
+			values (1, 1, 9, 0, 3, 3, 10, 1, 50, 5);
 
 -- Prowadzacy skladowych
 
@@ -425,10 +425,10 @@ insert into dbo.ProwadzacySkladowych("ID_Prowadzacego","ID_Skladowej")
 insert into dbo.ProwadzacySkladowych("ID_Prowadzacego","ID_Skladowej")
 			values(2,3);
 insert into dbo.ProwadzacySkladowych("ID_Prowadzacego","ID_Skladowej")
-			values(3,3);
+			values(0,3);
 insert into dbo.ProwadzacySkladowych("ID_Prowadzacego","ID_Skladowej")
-			values(3,4);
+			values(0,4);
 insert into dbo.ProwadzacySkladowych("ID_Prowadzacego","ID_Skladowej")
-			values(3,5);
+			values(0,5);
 insert into dbo.ProwadzacySkladowych("ID_Prowadzacego","ID_Skladowej")
-			values(3,6);
+			values(0,6);

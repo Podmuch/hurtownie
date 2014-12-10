@@ -33,7 +33,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>gTVr1fNbYhpRuIoMQw/EHx721j4=2014-12-08 23:02:302014-12-08 22:31:05</TimeStamp>
+        <TimeStamp>9T501DsbP62USpMC/e18QsoBI0k=2014-12-10 20:12:052014-12-08 22:31:05</TimeStamp>
         <ID>
           <String>Przedmioty</String>
         </ID>
@@ -82,7 +82,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>kbflRaBYH14FfZjhQrgIgUbghKk=2014-12-09 23:48:082014-12-08 22:31:05tgdENoWasmf4q2EADkl1RyPgt7M=2014-12-08 22:31:052014-12-08 22:31:05</TimeStamp>
+        <TimeStamp>WjO1PbayKWkxDLdhw3OMAp4er9c=2014-12-10 20:12:052014-12-08 22:31:05tgdENoWasmf4q2EADkl1RyPgt7M=2014-12-08 22:31:052014-12-08 22:31:05</TimeStamp>
         <ID>
           <String>Hurtownia Szkola</String>
         </ID>
@@ -99,5 +99,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2014-12-09T22:48:18.196667Z</LastDeployed>
+  <LastDeployed>2014-12-10T19:32:41.606667Z</LastDeployed>
 </DeploymentSnapshot>
