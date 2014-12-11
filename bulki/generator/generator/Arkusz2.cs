@@ -10,26 +10,23 @@ namespace generator
     {
         public int idstudenta;
         public int idterminu;
-        public string[] terminy;
-        public float[] uzyskanywynik;
-        public float[] mozliwepunktydozdobycia;
-
-        public Arkusz2(int _ids, int _idter, string[] ter, float[] uzyskpkt, float[] mozliwpkt)
+        public string terminy;
+        public float uzyskanywynik;
+        public float mozliwepunktydozdobycia;
+        public string data;
+        //"2012-10-01 00:00:00.000"
+        public Arkusz2(int _ids, int _idter, string ter, float uzyskpkt, float mozliwpkt, string _data)
         {
             idstudenta = _ids;
             idterminu = _idter;
-            terminy = ter.ToArray();
-            uzyskanywynik = uzyskpkt.ToArray();
-            mozliwepunktydozdobycia = mozliwpkt.ToArray();
+            terminy = ter;
+            uzyskanywynik = uzyskpkt;
+            mozliwepunktydozdobycia = mozliwpkt;
+            data = _data;
         }
         public string toString2()
         {
-            string str = idstudenta.ToString() + ";" + idterminu.ToString();
-            for (int i = 0; i < terminy.Length; i++)
-            {
-                str = str + ";" + terminy[i].ToString() + ";" + uzyskanywynik[i].ToString() + ";" + mozliwepunktydozdobycia[i].ToString();
-            }
-            return str + "\r\n";
+            return idstudenta.ToString() + ";" + idterminu.ToString() + ";" + terminy + ";" + uzyskanywynik.ToString() + ";" + mozliwepunktydozdobycia.ToString() + ";" + data + "\r\n";
         }
     }
 }

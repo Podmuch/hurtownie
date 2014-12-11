@@ -192,7 +192,7 @@ namespace generator
                 for (int i = 0; i < tmp; i++)
                 {
                     wylosowaneWierszeArkuszu1.Add(new Arkusz1(id, prowadzacySkladowych.idskladowej,
-                        prowadzacySkladowych.idprowadzacego));
+                        prowadzacySkladowych.idprowadzacego, rand.Next(1,23)));
                     id++;
                 }
             }
@@ -213,12 +213,18 @@ namespace generator
                     var student = studenci.ToArray()[rand.Next(0, studenci.Count)];
                     for (int i = 0; i < arrayterminy.Length; i++)
                     {
+                        int rok = rand.Next(12, 14);
+                        int dzien = rand.Next(1, 28);
+                        string data = "20" + rok + "-" +
+                                      (rok == 12 ? rand.Next(10, 13).ToString() : ("0" + rand.Next(1, 7))) + "-" +
+                                      (dzien < 10 ? "0" + dzien:dzien.ToString())+" 00:00:00.000";
                         arrayterminy[i] = rand.Next(0, 10) != 0 ? "TAK" : "NIE";
                         mozliwepunkty[i] = (float) rand.NextDouble()*10.0f;
                         uzyskanewyniki[i] = rand.Next(30,100)*0.01f*mozliwepunkty[i];
+                        wylosowaneWierszeArkuszu2.Add(new Arkusz2(student.nrindeksu, arkusz1.idterminu, arrayterminy[i],
+                        uzyskanewyniki[i], mozliwepunkty[i], data));
                     }
-                    wylosowaneWierszeArkuszu2.Add(new Arkusz2(student.nrindeksu, arkusz1.idterminu, arrayterminy,
-                        uzyskanewyniki, mozliwepunkty));
+                    
                     studenci.Remove(student);
                 }
             }

@@ -66,7 +66,7 @@ GO
 
 CREATE TABLE Prowadzacy_skladowych_czesci
 (
-	Fk_id_pracownika integer NOT NULL REFERENCES Prowadzacy(Id_pracownika),
 	Fk_id_skladowej integer NOT NULL REFERENCES Skladowe_przedmiotow(Id_skladowej),
+	Fk_id_pracownika integer NOT NULL REFERENCES Prowadzacy(Id_pracownika),
 );
 GO

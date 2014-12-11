@@ -56,3 +56,13 @@ C:\Users\Dominik\Desktop\Infromatyka Semestr V\Hurtownie Danych\Projekt\generato
 C:\hurtownie\bulki\generator\generator\bin\Debug\generator.exe.config
 C:\hurtownie\bulki\generator\generator\obj\Debug\generator.exe
 C:\hurtownie\bulki\generator\generator\obj\Debug\generator.pdb
+C:\hurtownie\bulki\generator\generator\bin\Debug\generator.exe
+C:\hurtownie\bulki\generator\generator\bin\Debug\generator.pdb
+C:\hurtownie\bulki\generator\generator\obj\Debug\generator.csprojResolveAssemblyReference.cache
+C:\hurtownie\bulki\generator\generator\obj\Debug\MainWindow.baml
+C:\hurtownie\bulki\generator\generator\obj\Debug\MainWindow.g.cs
+C:\hurtownie\bulki\generator\generator\obj\Debug\App.g.cs
+C:\hurtownie\bulki\generator\generator\obj\Debug\generator_MarkupCompile.cache
+C:\hurtownie\bulki\generator\generator\obj\Debug\generator.g.resources
+C:\hurtownie\bulki\generator\generator\obj\Debug\generator.Properties.Resources.resources
+C:\hurtownie\bulki\generator\generator\obj\Debug\generator.csproj.GenerateResource.Cache
