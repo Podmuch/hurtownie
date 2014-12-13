@@ -15,7 +15,7 @@ namespace generator
         public int rok;
         public int semestr;
         public int dlugects;
-
+        public List<Wyniki> wyniki; 
         public Studenci(int _nr, string _pesel, string _imie, string _nazwisko, int _rok, int _semestr, int _dlugects)
         {
             nrindeksu = _nr;
@@ -25,6 +25,7 @@ namespace generator
             rok = _rok;
             semestr = _semestr;
             dlugects = _dlugects;
+            wyniki = new List<Wyniki>();
         }
         public String toString2()
         {

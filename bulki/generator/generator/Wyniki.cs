@@ -9,10 +9,12 @@ namespace generator
     class Wyniki
     {
         public int indeksstudenta;
+        public int idprzedmiotu;
         public string nazwaprzedmiotu;        
         public float wynik;
-        public Wyniki(string _nazwa, int _ind, float _w)
+        public Wyniki(int _idprzed,string _nazwa, int _ind, float _w)
         {
+            idprzedmiotu = _idprzed;
             nazwaprzedmiotu = _nazwa;
             indeksstudenta = _ind;
             wynik = _w;

@@ -67,12 +67,25 @@ namespace generator
             nazwiska = tmp.Split(new char[] {'\n', '\r', '\t'}).Where((x) => x != "").ToList();
         }
 
+        private BackgroundWorker wczytywanieWorker;
         public MainWindow()
         {
             InitializeComponent();
             initwydzialy();
             initImionaNazwiska();
             losujRodzajeSkladowych();
+            wczytywanieWorker = new BackgroundWorker();
+            wczytywanieWorker.WorkerReportsProgress = true;
+            wczytywanieWorker.WorkerSupportsCancellation = false;
+            wczytywanieWorker.DoWork += losujWszystko;
+            wczytywanieWorker.ProgressChanged += (x, y) =>
+            {
+                bar1.Value = y.ProgressPercentage;
+            };
+            wczytywanieWorker.RunWorkerCompleted += (x, y) =>
+            {
+                button.IsEnabled = true;
+            };
             worker = new BackgroundWorker();
             worker.WorkerReportsProgress = true;
             worker.WorkerSupportsCancellation = false;
@@ -80,10 +93,6 @@ namespace generator
             worker.ProgressChanged += (x, y) =>
             {
                 bar1.Value = y.ProgressPercentage;
-            };
-            worker.RunWorkerCompleted += (x, y) =>
-            {
-                button.IsEnabled = true;
             };
             button.Content = "Generuj";
         }
@@ -94,12 +103,12 @@ namespace generator
             for (int i = 0; i < iloscProwadzacych; i++)
             {
                 int wiek = rand.Next(30, 60);
-                var tmp = wydzialy.ToArray()[rand.Next(0, wydzialy.Count)];
+                var tmp = wydzialy[rand.Next(0, wydzialy.Count)];
                 string wydzial = tmp.Key;
-                string katedra = tmp.Value.ToArray()[rand.Next(0, tmp.Value.Count)].Key;
-                string pesel = rand.Next(10, 99) + "0" + rand.Next(1, 10) + "" + rand.Next(10, 28) + "" + rand.Next(10000, 99999).ToString();
+                string katedra = tmp.Value[rand.Next(0, tmp.Value.Count)].Key;
+                string pesel = rand.Next(10, 99) + "0" + rand.Next(1, 10) + "" + rand.Next(10, 28) + "" + rand.Next(10000, 99999);
                 wylosowaniProwadzacy.Add(new Prowadzacy(id, pesel, tytuly[rand.Next(0, 3)], wiek - 30, wiek,
-                    imiona.ToArray()[rand.Next(0, imiona.Count)], nazwiska.ToArray()[rand.Next(0, nazwiska.Count)],
+                    imiona[rand.Next(0, imiona.Count)], nazwiska[rand.Next(0, nazwiska.Count)],
                     katedra, wydzial));
                 id++;
             }
@@ -109,9 +118,13 @@ namespace generator
         {
             foreach (var przed in przedmioty)
             {
-                if(!wylosowanePrzedmioty.Exists((x)=>x.nazwa==przed))
-                    wylosowanePrzedmioty.Add(new Przedmiot(przed, rand.Next(1, 11), 15*rand.Next(1, 5), rand.Next(1, 7),
-                        wylosowaniProwadzacy.ToArray()[rand.Next(0, wylosowaniProwadzacy.Count)].id));
+                if (!wylosowanePrzedmioty.Exists((x) => x.nazwa == przed))
+                {
+                    wylosowanePrzedmioty.Add(new Przedmiot(id, przed, rand.Next(1, 11), 15*rand.Next(1, 5),
+                        rand.Next(1, 7),
+                        wylosowaniProwadzacy[rand.Next(0, wylosowaniProwadzacy.Count)].id));
+                    id++;
+                }
             }
         }
 
@@ -134,8 +147,8 @@ namespace generator
                     int tmp = (iloscgodzin > 15) ? rand.Next(1,1+ iloscgodzin/15)*15 : iloscgodzin;
                     iloscgodzin -= tmp;
                     wylosowaneSkladowePrzedmiotu.Add(new SkladowaPrzedmiotu(id, przedmiot.nazwa,
-                        wylosowaneRodzajeSkladowych.ToArray()[rand.Next(0, 4)].nazwa, tmp,
-                        wylosowaniProwadzacy.ToArray()[rand.Next(0, wylosowaniProwadzacy.Count)].id));
+                        wylosowaneRodzajeSkladowych[rand.Next(0, 4)].nazwa, tmp,
+                        wylosowaniProwadzacy[rand.Next(0, wylosowaniProwadzacy.Count)].id));
                     id++;
                 }
             }
@@ -147,7 +160,7 @@ namespace generator
             {
                 for (int i = 0; i < 10; i++)
                 {
-                    var tmp=new ProwadzacySkladowych(wylosowaneSkladowePrzedmiotu.ToArray()[rand.Next(0, wylosowaneSkladowePrzedmiotu.Count)].idskladowej, prowadzacy.id);
+                    var tmp=new ProwadzacySkladowych(wylosowaneSkladowePrzedmiotu[rand.Next(0, wylosowaneSkladowePrzedmiotu.Count)].idskladowej, prowadzacy.id);
                     if(!wylosowaniProwadzacySkladowych.Exists((x)=>x.idprowadzacego==tmp.idprowadzacego&&x.idskladowej==tmp.idskladowej))
                         wylosowaniProwadzacySkladowych.Add(tmp);
                 }
@@ -162,25 +175,32 @@ namespace generator
                 int semestr = (rok - 1)*2 + rand.Next(1, 2);
                 int dlug = rand.Next(0, 20);
                 string pesel = rand.Next(10, 99)+"0" + rand.Next(1, 10)+"" + rand.Next(10, 28)+""+ rand.Next(10000, 99999).ToString();
-                wylosowaniStudenci.Add(new Studenci(id, pesel, imiona.ToArray()[rand.Next(0, imiona.Count)],
-                    nazwiska.ToArray()[rand.Next(0, nazwiska.Count)], rok, semestr, dlug));
+                wylosowaniStudenci.Add(new Studenci(id, pesel, imiona[rand.Next(0, imiona.Count)],
+                    nazwiska[rand.Next(0, nazwiska.Count)], rok, semestr, dlug));
                 id++;
             }
         }
 
         private void losujWyniki()
         {
+            wylosowaneWyniki.Clear();
             foreach (var studenci in wylosowaniStudenci)
             {
-                for (int i = 0; i < studenci.semestr*5; i++)
+                while (studenci.wyniki.Count<studenci.semestr*5)
                 {
-                    var tmp=new Wyniki(wylosowanePrzedmioty.ToArray()[rand.Next(0, wylosowanePrzedmioty.Count)].nazwa,
-                            studenci.nrindeksu, rand.Next(4, 12)*0.5f);
-                    if(wylosowaneWyniki.Exists((x)=>x.indeksstudenta==tmp.indeksstudenta&&x.nazwaprzedmiotu==tmp.nazwaprzedmiotu))
-                        wylosowaneWyniki.Find((x)=>x.indeksstudenta==tmp.indeksstudenta&&x.nazwaprzedmiotu==tmp.nazwaprzedmiotu).wynik=tmp.wynik;
+                    var przedmiot = wylosowanePrzedmioty[rand.Next(0, wylosowanePrzedmioty.Count)];
+                    var przedmiotstudenta = studenci.wyniki.Find((x) => x.idprzedmiotu == przedmiot.id);
+                    if (przedmiotstudenta != null)
+                    {
+                        przedmiotstudenta.wynik = rand.Next(4, 12)*0.5f;
+                    }
                     else
-                        wylosowaneWyniki.Add(tmp);
+                    {
+                        studenci.wyniki.Add(new Wyniki(przedmiot.id, przedmiot.nazwa,
+                            studenci.nrindeksu, rand.Next(4, 12) * 0.5f));
+                    }
                 }
+                wylosowaneWyniki.AddRange(studenci.wyniki);
             }
         }
 
@@ -200,33 +220,31 @@ namespace generator
 
         private void losujProtokoly2()
         {
-            var studenci = new List<Studenci>(wylosowaniStudenci);
             foreach (var arkusz1 in wylosowaneWierszeArkuszu1)
             {
                 SkladowaPrzedmiotu tmp = wylosowaneSkladowePrzedmiotu.Find((x) => x.idskladowej == arkusz1.idskladowej);
                 int ilosczajec = (int) (tmp.iloscgodzin/1.5f);
-                string[] arrayterminy = new string[ilosczajec];
-                float[] uzyskanewyniki = new float[ilosczajec];
-                float[] mozliwepunkty = new float[ilosczajec];        
-                for (int j = 0; j < 10 && studenci.Count > 0; j++)
+                int indekspoczatkowy = rand.Next(0, wylosowaniStudenci.Count);
+                int indekskoncowy = ((indekspoczatkowy + 10) > wylosowaniStudenci.Count)
+                    ? (wylosowaniStudenci.Count - indekspoczatkowy)/2
+                    : 10;
+                var studencidanegoterminu = wylosowaniStudenci.GetRange(indekspoczatkowy, indekskoncowy);
+                for (int i = 0; i < ilosczajec; i++)
                 {
-                    var student = studenci.ToArray()[rand.Next(0, studenci.Count)];
-                    for (int i = 0; i < arrayterminy.Length; i++)
+                    float mozliwepunkty = (float)rand.NextDouble() * 10.0f;
+                    int rok = rand.Next(12, 14);
+                    int dzien = rand.Next(1, 28);
+                    string data = "20" + rok + "-" +
+                                  (rok == 12 ? rand.Next(10, 13).ToString() : ("0" + rand.Next(1, 7))) + "-" +
+                                  (dzien < 10 ? "0" + dzien : dzien.ToString()) + " 00:00:00.000";
+                    foreach(var student in studencidanegoterminu)
                     {
-                        int rok = rand.Next(12, 14);
-                        int dzien = rand.Next(1, 28);
-                        string data = "20" + rok + "-" +
-                                      (rok == 12 ? rand.Next(10, 13).ToString() : ("0" + rand.Next(1, 7))) + "-" +
-                                      (dzien < 10 ? "0" + dzien:dzien.ToString())+" 00:00:00.000";
-                        arrayterminy[i] = rand.Next(0, 10) != 0 ? "TAK" : "NIE";
-                        mozliwepunkty[i] = (float) rand.NextDouble()*10.0f;
-                        uzyskanewyniki[i] = rand.Next(30,100)*0.01f*mozliwepunkty[i];
-                        wylosowaneWierszeArkuszu2.Add(new Arkusz2(student.nrindeksu, arkusz1.idterminu, arrayterminy[i],
-                        uzyskanewyniki[i], mozliwepunkty[i], data));
+                        string arrayterminy = rand.Next(0, 10) != 0 ? "TAK" : "NIE";
+                        float uzyskanewyniki = rand.Next(30, 100)*0.01f*mozliwepunkty;
+                        wylosowaneWierszeArkuszu2.Add(new Arkusz2(student.nrindeksu, arkusz1.idterminu, arrayterminy,
+                            uzyskanewyniki, mozliwepunkty, data));
                     }
-                    
-                    studenci.Remove(student);
-                }
+                }     
             }
         }
 
@@ -234,7 +252,7 @@ namespace generator
         {
             for (int i = 0; i < rand.Next(0, wylosowaniProwadzacy.Count/10); i++)
             {
-                var prowadzacy = wylosowaniProwadzacy.ToArray()[rand.Next(0, wylosowaniProwadzacy.Count)];
+                var prowadzacy = wylosowaniProwadzacy[rand.Next(0, wylosowaniProwadzacy.Count)];
                 switch (prowadzacy.tytul)
                 {
                     case "mgr":
@@ -247,19 +265,14 @@ namespace generator
             }
             for (int i = 0; i < rand.Next(0, wylosowaniProwadzacy.Count / 10); i++)
             {
-                var prowadzacy = wylosowaniProwadzacy.ToArray()[rand.Next(0, wylosowaniProwadzacy.Count)];
-                prowadzacy.nazwisko = nazwiska.ToArray()[rand.Next(0, nazwiska.Count)];
+                var prowadzacy = wylosowaniProwadzacy[rand.Next(0, wylosowaniProwadzacy.Count)];
+                prowadzacy.nazwisko = nazwiska[rand.Next(0, nazwiska.Count)];
             }
             for (int i = 0; i < rand.Next(0, wylosowaniProwadzacy.Count / 10); i++)
             {
-                var prowadzacy = wylosowaniProwadzacy.ToArray()[rand.Next(0, wylosowaniProwadzacy.Count)];
+                var prowadzacy = wylosowaniProwadzacy[rand.Next(0, wylosowaniProwadzacy.Count)];
                 prowadzacy.wiek += 1;
                 prowadzacy.staz += 1; 
-            }
-            for (int i = 0; i < rand.Next(0, wylosowaniProwadzacy.Count / 20); i++)
-            {
-                var prowadzacy = wylosowaniProwadzacy.ToArray()[rand.Next(0, wylosowaniProwadzacy.Count)];
-                wylosowaniProwadzacy.Remove((prowadzacy));
             }
         }
 
@@ -267,8 +280,8 @@ namespace generator
         {
             for (int i = 0; i < rand.Next(0, wylosowaniProwadzacySkladowych.Count / 10); i++)
             {
-                var prowadzacy = wylosowaniProwadzacySkladowych.ToArray()[rand.Next(0, wylosowaniProwadzacySkladowych.Count)];
-                prowadzacy.idskladowej = wylosowaneSkladowePrzedmiotu.ToArray()[rand.Next(0, wylosowaneSkladowePrzedmiotu.Count)].idskladowej;
+                var prowadzacy = wylosowaniProwadzacySkladowych[rand.Next(0, wylosowaniProwadzacySkladowych.Count)];
+                prowadzacy.idskladowej = wylosowaneSkladowePrzedmiotu[rand.Next(0, wylosowaneSkladowePrzedmiotu.Count)].idskladowej;
 
             }
         }
@@ -288,7 +301,6 @@ namespace generator
                     studenci.rok = studenci.semestr/2 + 1;
                 }
             }
-            wylosowaniStudenci.RemoveAll((x) => x.dlugects > 20);
         }
 
         private void onClick(object sender, RoutedEventArgs e)
@@ -299,85 +311,87 @@ namespace generator
                 button.Content = "Generuj";
             button.IsEnabled = false;
             iloscProwadzacych = Convert.ToInt32(textbox.Text);
-            worker.RunWorkerAsync();
+            wczytywanieWorker.RunWorkerAsync();
             aktualizujProwadzacych();
             aktualizujProwadzacychSkladowych();
             aktualizujStudentow();
         }
 
-        private void zapisz(object sender, DoWorkEventArgs e)
+        private void losujWszystko(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker w = sender as BackgroundWorker;
             losujProwadzacych();
-            losujPrzedmioty();
-            
-            losujSkladowePrzedmiotu();
-            losujProwadzacychSkladowych();
-            losujStudentow();
-            losujWyniki();
-            losujProtokoly1();
-            losujProtokoly2();
             w.ReportProgress(10);
-            Thread.Sleep(10);
+            Thread.Sleep(1);
+            losujPrzedmioty();
+            w.ReportProgress(20);
+            Thread.Sleep(1);
+            losujSkladowePrzedmiotu();
+            w.ReportProgress(30);
+            Thread.Sleep(1);
+            losujProwadzacychSkladowych();
+            w.ReportProgress(40);
+            Thread.Sleep(1);
+            losujStudentow();
+            w.ReportProgress(50);
+            Thread.Sleep(1);
+            losujWyniki();
+            w.ReportProgress(60);
+            Thread.Sleep(1);
+            losujProtokoly1();
+            w.ReportProgress(70);
+            Thread.Sleep(1);
+            losujProtokoly2();
+            w.ReportProgress(100);
+            Thread.Sleep(1);
 
-            float progress = wylosowanePrzedmioty.Count + wylosowaniProwadzacy.Count + wylosowaneRodzajeSkladowych.Count +
-                           wylosowaneSkladowePrzedmiotu.Count + wylosowaneWyniki.Count +
-                           wylosowaniProwadzacySkladowych.Count + wylosowaniStudenci.Count +
-                           wylosowaneWierszeArkuszu1.Count + wylosowaneWierszeArkuszu2.Count;
-            float tmpprogress = 0;
-            string text = wylosowaniProwadzacy.Aggregate("", (current, x) => current + x.toString2());
-            System.IO.File.WriteAllText("prowadzacy.bulk", text);
-            tmpprogress += wylosowaniProwadzacy.Count;
-            w.ReportProgress(10+(int)((tmpprogress/progress)*90));
-            Thread.Sleep(10);
+        }
 
-            text = wylosowanePrzedmioty.Aggregate("", (current, x) => current + x.toString2());
-            System.IO.File.WriteAllText("przedmioty.bulk", text);
-            tmpprogress += wylosowanePrzedmioty.Count;
-            w.ReportProgress(10 + (int)((tmpprogress / progress) * 90.0));
-            Thread.Sleep(10);
+        private void zapisz(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker w = sender as BackgroundWorker;
 
-            text = wylosowaneRodzajeSkladowych.Aggregate("", (current, x) => current + x.toString2());
-            System.IO.File.WriteAllText("rodzaje_skladowych.bulk", text);
-            tmpprogress += wylosowaneRodzajeSkladowych.Count;
-            w.ReportProgress(10 + (int)((tmpprogress / progress) * 90));
-            Thread.Sleep(10);
+            w.ReportProgress(10);
+            Thread.Sleep(1);
+            string wylosowaniProwadzacytext = wylosowaniProwadzacy.Aggregate("", (current, x) => current + x.toString2());
+            string wylosowanePrzedmiotytext = wylosowanePrzedmioty.Aggregate("", (current, x) => current + x.toString2());
+            string wylosowaneRodzajeSkladowychtext = wylosowaneRodzajeSkladowych.Aggregate("", (current, x) => current + x.toString2());
+            string wylosowaneSkladowePrzedmiotutext = wylosowaneSkladowePrzedmiotu.Aggregate("", (current, x) => current + x.toString2());
+            
+            StringBuilder wynikiBuilder = new StringBuilder();
+            for (int i = 0; i < wylosowaneWyniki.Count; i++)
+            {
+                wynikiBuilder.Append(wylosowaneWyniki[i].toString2());
+            }
+            string wylosowaneWynikitext = wynikiBuilder.ToString();
+            string wylosowaniProwadzacySkladowychutext = wylosowaniProwadzacySkladowych.Aggregate("", (current, x) => current + x.toString2());
+            string wylosowaniStudencitext = wylosowaniStudenci.Aggregate("", (current, x) => current + x.toString2());
+            string wylosowaneWierszeArkuszu1text = wylosowaneWierszeArkuszu1.Aggregate("", (current, x) => current + x.toString2());
+            StringBuilder arkusz2Builder = new StringBuilder();
+            for (int i = 0; i < wylosowaneWierszeArkuszu2.Count; i++)
+            {
+                arkusz2Builder.Append(wylosowaneWierszeArkuszu2[i].toString2());
+            }
+            string wylosowaneWierszeArkuszu2text = arkusz2Builder.ToString();
 
-            text = wylosowaneSkladowePrzedmiotu.Aggregate("", (current, x) => current + x.toString2());
-            System.IO.File.WriteAllText("skladowe_przedmiotow.bulk", text);
-            tmpprogress += wylosowaneSkladowePrzedmiotu.Count;
-            w.ReportProgress(10 + (int)((tmpprogress / progress) * 90));
-            Thread.Sleep(10);
+            w.ReportProgress(50);
+            Thread.Sleep(1);
+            System.IO.File.WriteAllText("prowadzacy.bulk", wylosowaniProwadzacytext);
+            System.IO.File.WriteAllText("przedmioty.bulk", wylosowanePrzedmiotytext);
+            System.IO.File.WriteAllText("rodzaje_skladowych.bulk", wylosowaneRodzajeSkladowychtext);
+            System.IO.File.WriteAllText("skladowe_przedmiotow.bulk", wylosowaneSkladowePrzedmiotutext);
+            System.IO.File.WriteAllText("wyniki.bulk", wylosowaneWynikitext);
+            System.IO.File.WriteAllText("prowadzacy_skladowych_czesci.bulk", wylosowaniProwadzacySkladowychutext);
+            System.IO.File.WriteAllText("studenci.bulk", wylosowaniStudencitext);
+            System.IO.File.WriteAllText("arkusz1.csv", wylosowaneWierszeArkuszu1text);
+            System.IO.File.WriteAllText("arkusz2.csv", wylosowaneWierszeArkuszu2text);
+            w.ReportProgress(100);
+            Thread.Sleep(1);
+        }
 
-            text = wylosowaneWyniki.Aggregate("", (current, x) => current + x.toString2());
-            System.IO.File.WriteAllText("wyniki.bulk", text);
-            tmpprogress += wylosowaneWyniki.Count;
-            w.ReportProgress(10 + (int)((tmpprogress / progress) * 90));
-            Thread.Sleep(10);
-
-            text = wylosowaniProwadzacySkladowych.Aggregate("", (current, x) => current + x.toString2());
-            System.IO.File.WriteAllText("prowadzacy_skladowych_czesci.bulk", text);
-            tmpprogress += wylosowaniProwadzacySkladowych.Count;
-            w.ReportProgress(10 + (int)((tmpprogress / progress) * 90));
-            Thread.Sleep(10);
-
-            text = wylosowaniStudenci.Aggregate("", (current, x) => current + x.toString2());
-            System.IO.File.WriteAllText("studenci.bulk", text);
-            tmpprogress += wylosowaniStudenci.Count;
-            w.ReportProgress(10 + (int)((tmpprogress / progress) * 90));
-            Thread.Sleep(10);
-
-            text = wylosowaneWierszeArkuszu1.Aggregate("", (current, x) => current + x.toString2());
-            System.IO.File.WriteAllText("arkusz1.csv", text);
-            tmpprogress += wylosowaneWierszeArkuszu1.Count;
-            w.ReportProgress(10 + (int)((tmpprogress / progress) * 90));
-            Thread.Sleep(10);
-
-            text = wylosowaneWierszeArkuszu2.Aggregate("", (current, x) => current + x.toString2());
-            System.IO.File.WriteAllText("arkusz2.csv", text);
-            tmpprogress += wylosowaneWierszeArkuszu2.Count;
-            w.ReportProgress(10 + (int)((tmpprogress / progress) * 90));
-            Thread.Sleep(10);
+        private void zapiszprzycisk(object sender, RoutedEventArgs e)
+        {
+            worker.RunWorkerAsync();
         }
     }
 }

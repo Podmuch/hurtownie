@@ -1,10 +1,100 @@
-0;14091835013;mgr;26;56;Paulin;Dziąg;Katedra Inteligentnych Systemów Interaktywnych;Wydział Elektroniki, Telekomunikacji i Informatyki
-1;25062497160;mgr;1;31;Kolumba;Wachowski;Katedra Algorytmów i Modelowania Systemów;Wydział Elektroniki, Telekomunikacji i Informatyki
-2;83011390907;dr;20;50;Julianna;Borys;Katedra Urbanistyki i Planowania Regionalnego;Wydział Architektury
-3;73092765309;prof;2;32;Leander;Polański;Katedra Urbanistyki i Planowania Regionalnego;Wydział Architektury
-4;55052754123;dr;26;56;Bonifacy;Sojka;Katedra Algorytmów i Modelowania Systemów;Wydział Elektroniki, Telekomunikacji i Informatyki
-5;57092499288;dr;16;46;Zyta;Skrok;Katedra Projektowania środowiskowego;Wydział Architektury
-6;42012697556;mgr;17;47;Juwentyn;Podsiadło;Katedra Analizy Ekonomicznej i Finansów;Wydział Zarządzania i Ekonomii
-7;69091588305;mgr;6;36;Mamert;Borowski;Katedra Architektury Użyteczności Publicznej;Wydział Architektury
-8;12052487850;mgr;21;51;Kordula;Duda;Katedra Inteligentnych Systemów Interaktywnych;Wydział Elektroniki, Telekomunikacji i Informatyki
-9;62011019267;prof;29;59;Rogat;Pankau;Katedra Architektury Użyteczności Publicznej;Wydział Architektury
+0;76011696778;dr;24;54;Kapitolina;Lipiński;Katedra Architektury Użyteczności Publicznej;Wydział Architektury
+1;75042773578;prof;9;39;Florentyn;Odrzywolski;Katedra Inżynierii Oprogramowania;Wydział Elektroniki, Telekomunikacji i Informatyki
+2;90051980311;mgr;4;34;Celeryna;Burzyński;Katedra Algorytmów i Modelowania Systemów;Wydział Elektroniki, Telekomunikacji i Informatyki
+3;29091821644;dr;13;43;Symplicjusz;Frydrychowicz;Katedra Analizy Ekonomicznej i Finansów;Wydział Zarządzania i Ekonomii
+4;61041474323;prof;10;40;Amoniusz;Pluta;Katedra Urbanistyki i Planowania Regionalnego;Wydział Architektury
+5;30061610516;mgr;23;53;Konkordiusz;Merk;Katedra Inżynierii Oprogramowania;Wydział Elektroniki, Telekomunikacji i Informatyki
+6;71091946327;dr;16;46;Lilla;Wilczyński;Katedra Nauk Ekonomicznych;Wydział Zarządzania i Ekonomii
+7;10022773929;dr;25;55;Sykstus;Gosiewski;Katedra Architektury Mieszkaniowej;Wydział Architektury
+8;13031182124;prof;24;54;Walenty;Paszkiewicz;Katedra Analizy Ekonomicznej i Finansów;Wydział Zarządzania i Ekonomii
+9;13061847912;mgr;13;43;Awita;Topolski;Katedra Projektowania środowiskowego;Wydział Architektury
+10;21072331670;prof;26;56;Aureliusz;Samsonowicz;Katedra Architektury Mieszkaniowej;Wydział Architektury
+11;16072385537;prof;19;49;Modest;Wawrzyniak;Katedra Inteligentnych Systemów Interaktywnych;Wydział Elektroniki, Telekomunikacji i Informatyki
+12;32052368288;mgr;22;52;Nostrian;Semik;Katedra Algorytmów i Modelowania Systemów;Wydział Elektroniki, Telekomunikacji i Informatyki
+13;69032370789;prof;16;46;Laurenty;Paprocki;Katedra Algorytmów i Modelowania Systemów;Wydział Elektroniki, Telekomunikacji i Informatyki
+14;87091165516;mgr;24;54;Marol;Wachowski;Katedra Nauk Ekonomicznych;Wydział Zarządzania i Ekonomii
+15;75011797613;prof;19;49;Fausta;Abramczyk;Katedra Nauk Ekonomicznych;Wydział Zarządzania i Ekonomii
+16;43022741619;prof;2;32;Innocencja;Wojnar;Katedra Urbanistyki i Planowania Regionalnego;Wydział Architektury
+17;83012664085;mgr;1;31;Licyniusz;Kowalski;Katedra Marketingu;Wydział Zarządzania i Ekonomii
+18;57012598735;mgr;3;33;Wirgiliusz;Wolicki;Katedra Urbanistyki i Planowania Regionalnego;Wydział Architektury
+19;36052239353;dr;23;53;Ignacja;Wróbel;Katedra Analizy Ekonomicznej i Finansów;Wydział Zarządzania i Ekonomii
+20;48082234581;prof;22;52;Emilia;Gosiewski;Katedra Marketingu;Wydział Zarządzania i Ekonomii
+21;39082344728;prof;23;53;Longin;Kaczmarek;Katedra Marketingu;Wydział Zarządzania i Ekonomii
+22;82021571544;mgr;29;59;Manswet;Kozakiewicz;Katedra Architektury Mieszkaniowej;Wydział Architektury
+23;42061677553;mgr;17;47;Humbelina;Korczewski;Katedra Projektowania środowiskowego;Wydział Architektury
+24;43021028133;prof;17;47;Patrycy;Słaby;Katedra Urbanistyki i Planowania Regionalnego;Wydział Architektury
+25;51092258448;prof;9;39;Kornel;Niewiadomski;Katedra Architektury Mieszkaniowej;Wydział Architektury
+26;38062234819;mgr;1;31;Gemma;Olszowski;Katedra Projektowania środowiskowego;Wydział Architektury
+27;97072550663;prof;0;30;Emilia;Dziadosz;Katedra Projektowania środowiskowego;Wydział Architektury
+28;66011493035;mgr;2;32;Patrycjusz;Woźniak;Katedra Nauk Ekonomicznych;Wydział Zarządzania i Ekonomii
+29;29031768575;mgr;24;54;Innocentyna;Maćkowiak;Katedra Analizy Ekonomicznej i Finansów;Wydział Zarządzania i Ekonomii
+30;88071416235;mgr;22;52;Kasja;Cwojdziński;Katedra Analizy Ekonomicznej i Finansów;Wydział Zarządzania i Ekonomii
+31;22041449521;prof;6;36;Konstans;Kurtyka;Katedra Analizy Ekonomicznej i Finansów;Wydział Zarządzania i Ekonomii
+32;79071014275;dr;23;53;Felicja;Jank;Katedra Architektury Użyteczności Publicznej;Wydział Architektury
+33;30041162667;prof;6;36;Saturnina;Szwedowski;Katedra Architektury Mieszkaniowej;Wydział Architektury
+34;38071290118;prof;4;34;Krescencja;Bienias;Katedra Analizy Ekonomicznej i Finansów;Wydział Zarządzania i Ekonomii
+35;40071827488;dr;29;59;Eutychian;Ryś;Katedra Analizy Ekonomicznej i Finansów;Wydział Zarządzania i Ekonomii
+36;55091159232;prof;5;35;Hortensja;Kossowski;Katedra Urbanistyki i Planowania Regionalnego;Wydział Architektury
+37;51031011130;dr;20;50;Aureliusz;Przewalski;Katedra Inżynierii Oprogramowania;Wydział Elektroniki, Telekomunikacji i Informatyki
+38;67031722053;prof;4;34;Wenancjusz;Włodarczyk;Katedra Architektury Mieszkaniowej;Wydział Architektury
+39;32061230643;prof;26;56;Placyd;Rogalski;Katedra Urbanistyki i Planowania Regionalnego;Wydział Architektury
+40;50041687594;dr;17;47;Delfin;Radziński;Katedra Architektury Mieszkaniowej;Wydział Architektury
+41;56051080814;prof;14;44;Kamil;Mączyński;Katedra Marketingu;Wydział Zarządzania i Ekonomii
+42;82041992936;prof;28;58;Marcja;Czekalski;Katedra Analizy Ekonomicznej i Finansów;Wydział Zarządzania i Ekonomii
+43;46011199965;prof;24;54;Konstanty;Walicki;Katedra Architektury Mieszkaniowej;Wydział Architektury
+44;93051383299;mgr;16;46;Fotyna;Piątek;Katedra Architektury Systemów Komputerowych;Wydział Elektroniki, Telekomunikacji i Informatyki
+45;95072476002;dr;10;40;Agrykola;Wajs;Katedra Inteligentnych Systemów Interaktywnych;Wydział Elektroniki, Telekomunikacji i Informatyki
+46;10081371658;prof;13;43;Septymiusz;Łuczak;Katedra Urbanistyki i Planowania Regionalnego;Wydział Architektury
+47;43091619129;dr;1;31;Maron;Jarmakowski;Katedra Marketingu;Wydział Zarządzania i Ekonomii
+48;34071781053;mgr;20;50;Firmina;Gryga;Katedra Nauk Ekonomicznych;Wydział Zarządzania i Ekonomii
+49;46041689604;dr;11;41;Donacjan;Jank;Katedra Inżynierii Oprogramowania;Wydział Elektroniki, Telekomunikacji i Informatyki
+6844;93011777395;mgr;22;52;Maur;Olszewski;Katedra Inżynierii Oprogramowania;Wydział Elektroniki, Telekomunikacji i Informatyki
+6845;28091961655;prof;20;50;Hersylia;Witczak;Katedra Projektowania środowiskowego;Wydział Architektury
+6846;62061268081;prof;10;40;Kordula;Łańcucki;Katedra Analizy Ekonomicznej i Finansów;Wydział Zarządzania i Ekonomii
+6847;88091167688;dr;1;31;Satura;Wójtowicz;Katedra Urbanistyki i Planowania Regionalnego;Wydział Architektury
+6848;19041479627;prof;16;46;Bibiana;Gondz;Katedra Algorytmów i Modelowania Systemów;Wydział Elektroniki, Telekomunikacji i Informatyki
+6849;67071150217;dr;6;36;Liberat;Wruk;Katedra Algorytmów i Modelowania Systemów;Wydział Elektroniki, Telekomunikacji i Informatyki
+6850;94052157519;dr;23;53;Juliusz;Wojciechowski;Katedra Projektowania środowiskowego;Wydział Architektury
+6851;79042750939;mgr;27;57;Florestan;Krawczyk;Katedra Architektury Użyteczności Publicznej;Wydział Architektury
+6852;62022014995;prof;10;40;Delfin;Witczyk;Katedra Analizy Ekonomicznej i Finansów;Wydział Zarządzania i Ekonomii
+6853;96021894222;mgr;18;48;Blanda;Szlawski;Katedra Architektury Mieszkaniowej;Wydział Architektury
+6854;72032763127;mgr;21;51;Krescenty;Szczepanowski;Katedra Urbanistyki i Planowania Regionalnego;Wydział Architektury
+6855;93061010158;prof;18;48;Hersylia;Wilkoszewski;Katedra Algorytmów i Modelowania Systemów;Wydział Elektroniki, Telekomunikacji i Informatyki
+6856;38032128033;prof;17;47;Asumpta;Wałach;Katedra Inteligentnych Systemów Interaktywnych;Wydział Elektroniki, Telekomunikacji i Informatyki
+6857;43061114156;dr;1;31;Largus;Imieliński;Katedra Projektowania środowiskowego;Wydział Architektury
+6858;39031319724;mgr;29;59;Memiusz;Drzewiecki;Katedra Marketingu;Wydział Zarządzania i Ekonomii
+6859;74021185218;dr;14;44;Modest;Rybicki;Katedra Urbanistyki i Planowania Regionalnego;Wydział Architektury
+6860;46071814120;prof;23;53;Kwintylian;Mąkosza;Katedra Architektury Systemów Komputerowych;Wydział Elektroniki, Telekomunikacji i Informatyki
+6861;54092314766;mgr;29;59;Afrykan;Duchnowski;Katedra Architektury Systemów Komputerowych;Wydział Elektroniki, Telekomunikacji i Informatyki
+6862;52042662771;dr;15;45;Festus;Paradowski;Katedra Urbanistyki i Planowania Regionalnego;Wydział Architektury
+6863;65051531328;mgr;8;38;Amadea;Waglewski;Katedra Nauk Ekonomicznych;Wydział Zarządzania i Ekonomii
+6864;90022563402;mgr;4;34;Krystyna;Michałowski;Katedra Architektury Użyteczności Publicznej;Wydział Architektury
+6865;32022220645;mgr;0;30;Agryppa;Szklarski;Katedra Marketingu;Wydział Zarządzania i Ekonomii
+6866;74021571358;prof;25;55;Antyd;Przeździecki;Katedra Architektury Systemów Komputerowych;Wydział Elektroniki, Telekomunikacji i Informatyki
+6867;22011336902;dr;14;44;Maksencjusz;Ostrowski;Katedra Marketingu;Wydział Zarządzania i Ekonomii
+6868;69051940579;prof;10;40;Retyk;Szczawiński;Katedra Inżynierii Oprogramowania;Wydział Elektroniki, Telekomunikacji i Informatyki
+6869;81012370272;mgr;5;35;Flora;Tasior;Katedra Architektury Mieszkaniowej;Wydział Architektury
+6870;26091233394;mgr;4;34;Kancjusz;Zagumny;Katedra Analizy Ekonomicznej i Finansów;Wydział Zarządzania i Ekonomii
+6871;51051657067;prof;11;41;Fulgencjusz;Rzepecki;Katedra Inżynierii Oprogramowania;Wydział Elektroniki, Telekomunikacji i Informatyki
+6872;33041671462;prof;29;59;Enniusz;Janeczek;Katedra Marketingu;Wydział Zarządzania i Ekonomii
+6873;55042152934;prof;16;46;Emilia;Królicki;Katedra Architektury Użyteczności Publicznej;Wydział Architektury
+6874;55042238559;prof;7;37;Mariusz;Roszkowski;Katedra Projektowania środowiskowego;Wydział Architektury
+6875;11081333546;prof;6;36;Kamila;Pośpiech;Katedra Nauk Ekonomicznych;Wydział Zarządzania i Ekonomii
+6876;98041258663;mgr;14;44;Barbat;Szmejter;Katedra Algorytmów i Modelowania Systemów;Wydział Elektroniki, Telekomunikacji i Informatyki
+6877;82042555973;prof;26;56;Marianna;Sikorski;Katedra Analizy Ekonomicznej i Finansów;Wydział Zarządzania i Ekonomii
+6878;52012539491;prof;2;32;Celeryna;Górski;Katedra Analizy Ekonomicznej i Finansów;Wydział Zarządzania i Ekonomii
+6879;15092215758;dr;11;41;Bonit;Jagałła;Katedra Nauk Ekonomicznych;Wydział Zarządzania i Ekonomii
+6880;60081646341;mgr;5;35;Asteria;Bartyzel;Katedra Urbanistyki i Planowania Regionalnego;Wydział Architektury
+6881;15051933505;dr;20;50;Waleriana;Pietrzykowski;Katedra Inżynierii Oprogramowania;Wydział Elektroniki, Telekomunikacji i Informatyki
+6882;86041392763;mgr;24;54;Róża;Smulikowski;Katedra Architektury Systemów Komputerowych;Wydział Elektroniki, Telekomunikacji i Informatyki
+6883;64051039166;prof;23;53;Firmina;Remiszewski;Katedra Architektury Użyteczności Publicznej;Wydział Architektury
+6884;64051080435;prof;12;42;Sylwiusz;Krupscy;Katedra Projektowania środowiskowego;Wydział Architektury
+6885;54041945543;prof;12;42;Fidelis;Przewalski;Katedra Inteligentnych Systemów Interaktywnych;Wydział Elektroniki, Telekomunikacji i Informatyki
+6886;88032155001;mgr;13;43;Tuliusz;Muszyński;Katedra Architektury Mieszkaniowej;Wydział Architektury
+6887;39022038010;mgr;5;35;Maksanty;Kownacka;Katedra Inżynierii Oprogramowania;Wydział Elektroniki, Telekomunikacji i Informatyki
+6888;57031560584;dr;11;41;Geminian;Zarzecki;Katedra Urbanistyki i Planowania Regionalnego;Wydział Architektury
+6889;17021417122;dr;19;49;Marcjusz;Więcek;Katedra Architektury Systemów Komputerowych;Wydział Elektroniki, Telekomunikacji i Informatyki
+6890;11022662472;mgr;16;46;Maksencjusz;Tasior;Katedra Inteligentnych Systemów Interaktywnych;Wydział Elektroniki, Telekomunikacji i Informatyki
+6891;81031751429;dr;7;37;Abundancja;Zalewski;Katedra Inteligentnych Systemów Interaktywnych;Wydział Elektroniki, Telekomunikacji i Informatyki
+6892;60082193014;prof;1;31;Faust;Wiesiołowski;Katedra Architektury Mieszkaniowej;Wydział Architektury
+6893;48082677261;prof;15;45;Maksymin;Krzyżanowski;Katedra Marketingu;Wydział Zarządzania i Ekonomii
