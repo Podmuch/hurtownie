@@ -1,0 +1,16 @@
+WITH
+MEMBER [Measures].[œredni wynik] AS
+'3+([Measures].[Wynik Procentowy]/[Measures].[Uzyskane Oceny Count]-50)/20', FORMAT_STRING = '#.###'
+SELECT
+{(Filter([Przedmioty].[Nazwa Przedmiotu].Children,[Measures].[œredni wynik]>1),[Measures].[œredni wynik])} ON COLUMNS,
+{
+(Filter(([Skladowe Przedmiotu].[Nazwa Skladowej].[¦çwiczenia],[Data].[Semestr].[zimowy]),[Measures].[œredni wynik]>1)),
+(Filter(([Skladowe Przedmiotu].[Nazwa Skladowej].[laboratorium],[Data].[Semestr].[zimowy]),[Measures].[œredni wynik]>1)),
+(Filter(([Skladowe Przedmiotu].[Nazwa Skladowej].[projekt],[Data].[Semestr].[zimowy]),[Measures].[œredni wynik]>1)),
+(Filter(([Skladowe Przedmiotu].[Nazwa Skladowej].[wyk+éad],[Data].[Semestr].[zimowy]),[Measures].[œredni wynik]>1)),
+(Filter(([Skladowe Przedmiotu].[Nazwa Skladowej].[¦çwiczenia],[Data].[Semestr].[letni]),[Measures].[œredni wynik]>1)),
+(Filter(([Skladowe Przedmiotu].[Nazwa Skladowej].[laboratorium],[Data].[Semestr].[letni]),[Measures].[œredni wynik]>1)),
+(Filter(([Skladowe Przedmiotu].[Nazwa Skladowej].[projekt],[Data].[Semestr].[letni]),[Measures].[œredni wynik]>1)),
+(Filter(([Skladowe Przedmiotu].[Nazwa Skladowej].[wyk+éad],[Data].[Semestr].[letni]),[Measures].[œredni wynik]>1))
+} ON ROWS
+FROM [Hurtownia Szkola]

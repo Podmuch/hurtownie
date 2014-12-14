@@ -1,0 +1,10 @@
+WITH
+MEMBER [Measures].[roznica wyniku] AS
+'100*([Data].[Od roku do dnia].[Semestr].[letni],[Measures].[srednia_procentowa])/([Data].[Od roku do dnia].[Semestr].[zimowy],[Measures].[srednia_procentowa])-100', FORMAT_STRING = '#.###'
+
+SELECT
+{([Measures].[roznica wyniku])} ON COLUMNS,
+{
+TopCount(Order(Filter([Przedmioty].[Nazwa Przedmiotu].Children ,[Measures].[roznica wyniku]>-100),[Measures].[roznica wyniku], desc), 2, [Measures].[roznica wyniku])
+} ON ROWS
+FROM [Hurtownia Szkola]

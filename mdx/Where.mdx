@@ -1,0 +1,7 @@
+SELECT
+{([Measures].[srednia])} ON COLUMNS,
+{
+ ([Prowadzacy].[Katedra].Children)
+} ON ROWS
+FROM [Hurtownia Szkola]
+WHERE [Prowadzacy].[Wydzial].&[Wydzia+é Elektroniki, Telekomunikacji i Informatyki]

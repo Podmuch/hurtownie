@@ -1,0 +1,16 @@
+WITH
+MEMBER [Measures].[obliczona frekwencja] AS
+'[Measures].[frekwencja]', FORMAT_STRING = '#.### %'
+SELECT
+{(Filter([Przedmioty].[Nazwa Przedmiotu].Children,[Measures].[obliczona frekwencja]>0 ), [Measures].[obliczona frekwencja])} ON COLUMNS,
+{
+(Filter(([Skladowe Przedmiotu].[Nazwa Skladowej].[¦çwiczenia],[Data].[Od roku do dnia].[Semestr].[letni].PrevMember),[Measures].[obliczona frekwencja]>0)),
+(Filter(([Skladowe Przedmiotu].[Nazwa Skladowej].[laboratorium],[Data].[Od roku do dnia].[Semestr].[letni].PrevMember),[Measures].[obliczona frekwencja]>0)),
+(Filter(([Skladowe Przedmiotu].[Nazwa Skladowej].[projekt],[Data].[Od roku do dnia].[Semestr].[letni].PrevMember),[Measures].[obliczona frekwencja]>0)),
+(Filter(([Skladowe Przedmiotu].[Nazwa Skladowej].[wyk+éad],[Data].[Od roku do dnia].[Semestr].[letni].PrevMember),[Measures].[obliczona frekwencja]>0)),
+(Filter(([Skladowe Przedmiotu].[Nazwa Skladowej].[¦çwiczenia],[Data].[Od roku do dnia].[Semestr].[letni]),[Measures].[obliczona frekwencja]>0)),
+(Filter(([Skladowe Przedmiotu].[Nazwa Skladowej].[laboratorium],[Data].[Od roku do dnia].[Semestr].[letni]),[Measures].[obliczona frekwencja]>0)),
+(Filter(([Skladowe Przedmiotu].[Nazwa Skladowej].[projekt],[Data].[Od roku do dnia].[Semestr].[letni]),[Measures].[obliczona frekwencja]>0)),
+(Filter(([Skladowe Przedmiotu].[Nazwa Skladowej].[wyk+éad],[Data].[Od roku do dnia].[Semestr].[letni]),[Measures].[obliczona frekwencja]>0))
+} ON ROWS
+FROM [Hurtownia Szkola]
