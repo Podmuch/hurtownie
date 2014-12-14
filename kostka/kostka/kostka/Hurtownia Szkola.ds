@@ -3,12 +3,12 @@
   <Name>Hurtownia Szkola</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
   <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
-  <ConnectionString>Provider=SQLNCLI11.1;Data Source=DOMINIK-KOMP;Integrated Security=SSPI;Initial Catalog=hurtownia_szkola</ConnectionString>
+  <ConnectionString>Provider=SQLNCLI11.1;Data Source=HAIROX-KOMPUTER;Integrated Security=SSPI;Initial Catalog=hurtownia_szkola</ConnectionString>
   <ConnectionStringSecurity>Unchanged</ConnectionStringSecurity>
   <ImpersonationInfo>
     <ImpersonationMode>ImpersonateAccount</ImpersonationMode>
-    <Account>dominik</Account>
-    <ImpersonationInfoSecurity>Unchanged</ImpersonationInfoSecurity>
+    <Account>hairox</Account>
+    <ImpersonationInfoSecurity>PasswordRemoved</ImpersonationInfoSecurity>
   </ImpersonationInfo>
   <Timeout>PT0S</Timeout>
 </DataSource>

@@ -1,8 +1,8 @@
 ﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
   <Target>
     <Database>hurtownia</Database>
-    <Server>DOMINIK-KOMP</Server>
-    <ConnectionString>DataSource=DOMINIK-KOMP;Timeout=0</ConnectionString>
+    <Server>HAIROX-KOMPUTER\ANALYS</Server>
+    <ConnectionString>DataSource=HAIROX-KOMPUTER\ANALYS;Timeout=0</ConnectionString>
   </Target>
   <Options>
     <TransactionalDeployment>false</TransactionalDeployment>
@@ -19,70 +19,70 @@
     <ObjectSnapshots>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
-        <TimeStamp>ym0pRXxJT6yrJbqfTonHbVLevGw=2014-12-11 12:37:222014-12-10 18:54:05</TimeStamp>
+        <TimeStamp>MUQVMza/uuo1IkCagbOjxf6eZ4o=12-14-2014 16:16:4612-13-2014 21:21:50</TimeStamp>
         <ID>
           <String>Hurtownia Szkola</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>XJVI9T2iHWBGcUwi5xJpqd12wbQ=2014-12-10 18:54:052014-12-10 18:54:05</TimeStamp>
+        <TimeStamp>t7fglipe+1nBtQKqVxyW2Xh9+do=12-14-2014 16:18:4212-13-2014 21:21:50</TimeStamp>
         <ID>
           <String>Hurtownia Szkola</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>9T501DsbP62USpMC/e18QsoBI0k=2014-12-10 22:57:172014-12-10 18:54:05</TimeStamp>
+        <TimeStamp>9T501DsbP62USpMC/e18QsoBI0k=12-13-2014 21:21:5012-13-2014 21:21:50</TimeStamp>
         <ID>
           <String>Przedmioty</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>62TYO6IRfIPYU6E0XqyBGpz2WV4=2014-12-10 18:54:052014-12-10 18:54:05</TimeStamp>
+        <TimeStamp>62TYO6IRfIPYU6E0XqyBGpz2WV4=12-13-2014 21:21:5012-13-2014 21:21:50</TimeStamp>
         <ID>
           <String>Studenci</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>niCyhKQUnW5VLfJEJE8pio0hckI=2014-12-14 14:45:142014-12-10 18:54:05</TimeStamp>
+        <TimeStamp>niCyhKQUnW5VLfJEJE8pio0hckI=12-13-2014 21:21:5012-13-2014 21:21:50</TimeStamp>
         <ID>
           <String>Skladowe Przedmiotu</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>cDsb1noSz3dUHKwMfP9c+3zFvgQ=2014-12-10 18:54:052014-12-10 18:54:05</TimeStamp>
+        <TimeStamp>cDsb1noSz3dUHKwMfP9c+3zFvgQ=12-13-2014 21:21:5012-13-2014 21:21:50</TimeStamp>
         <ID>
           <String>Prowadzacy</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>8Eoxm+E4C/p0LmfoiozIja21otI=2014-12-14 12:04:022014-12-10 18:54:05</TimeStamp>
+        <TimeStamp>8Eoxm+E4C/p0LmfoiozIja21otI=12-14-2014 16:01:5912-13-2014 21:21:50</TimeStamp>
         <ID>
           <String>Data</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>1FH/5oDtnzi72tZSQ7ZHIeOuLU4=2014-12-10 18:54:052014-12-10 18:54:05</TimeStamp>
+        <TimeStamp>1FH/5oDtnzi72tZSQ7ZHIeOuLU4=12-13-2014 21:21:5012-13-2014 21:21:50</TimeStamp>
         <ID>
           <String>Czas</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>pOwENGdzmH+B3IzW/HvQJ3bJGPI=2014-12-10 18:54:052014-12-10 18:54:05</TimeStamp>
+        <TimeStamp>pOwENGdzmH+B3IzW/HvQJ3bJGPI=12-13-2014 21:21:5012-13-2014 21:21:50</TimeStamp>
         <ID>
           <String>Uzyskane Oceny</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>FXCGMY3RC7Avj9lJB6JshrEertY=2014-12-14 15:02:382014-12-10 18:54:05tgdENoWasmf4q2EADkl1RyPgt7M=2014-12-10 18:54:052014-12-10 18:54:05</TimeStamp>
+        <TimeStamp>DoZYYsS4Vq1v2w5qyUqL1gin9ws=12-14-2014 16:18:4212-13-2014 21:21:50tgdENoWasmf4q2EADkl1RyPgt7M=12-13-2014 21:21:5012-13-2014 21:21:50</TimeStamp>
         <ID>
           <String>Hurtownia Szkola</String>
         </ID>
@@ -90,7 +90,7 @@
     </ObjectSnapshots>
     <DatabaseSnapshot>
       <Type>Microsoft.AnalysisServices.Database</Type>
-      <TimeStamp>D9MR1lH2Jo6vDvBlvKsg/Oy1Jco=2014-12-07 21:26:262014-12-07 21:26:26</TimeStamp>
+      <TimeStamp>D9MR1lH2Jo6vDvBlvKsg/Oy1Jco=12-13-2014 21:21:5012-13-2014 21:21:50</TimeStamp>
       <ID>
         <String>hurtownia</String>
       </ID>
@@ -99,5 +99,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2014-12-14T14:02:54.596667Z</LastDeployed>
+  <LastDeployed>2014-12-14T15:18:51.996667Z</LastDeployed>
 </DeploymentSnapshot>

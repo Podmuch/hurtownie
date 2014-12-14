@@ -92,5 +92,8 @@ GO
 CREATE TABLE ProwadzacySkladowych(
 	ID_Prowadzacego INTEGER FOREIGN KEY REFERENCES Prowadzacy,
 	ID_Skladowej INTEGER FOREIGN KEY REFERENCES SkladowePrzedmiotu,
+	Data_Wstawienia datetime not null,
+	Data_Wygasniecia datetime,
+	Aktualnosc varchar(15),
 )
 GO

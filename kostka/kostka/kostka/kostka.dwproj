@@ -68,7 +68,7 @@
           <ConfigurationSetting>
             <Id>Hurtownia Szkola</Id>
             <Name>Hurtownia Szkola</Name>
-            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=DOMINIK-KOMP;Integrated Security=SSPI;Initial Catalog=hurtownia_szkola</Value>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=HAIROX-KOMPUTER;Integrated Security=SSPI;Initial Catalog=hurtownia_szkola</Value>
           </ConfigurationSetting>
         </ConnectionMappings>
         <ConnectionSecurityMappings>
