@@ -4,7 +4,7 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
-        <ServerName>DOMINIK-KOMP</ServerName>
+        <ServerName>HAIROX-KOMP</ServerName>
         <PathOnServer />
         <Run64BitRuntime>true</Run64BitRuntime>
         <UserIDs />
