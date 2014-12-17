@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="80"
-  DTS:VersionGUID="{88A976F0-988E-4075-9FD2-DE6B51D75DF3}">
+  DTS:VersionBuild="82"
+  DTS:VersionGUID="{99756FAF-BC34-499A-A219-F0D52874ECAE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -2950,6 +2950,12 @@ where [refTable].[ID_Skladowej] = ? and [refTable].[ID_Prowadzacego] = ?</proper
                       cachedName="data_wstawienia"
                       externalMetadataColumnId="Package\Informacje o prowadzacych skladowych\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Wstawienia]"
                       lineageId="Package\Informacje o prowadzacych skladowych\Derived Column.Outputs[Derived Column Output].Columns[data_wstawienia]" />
+                    <inputColumn
+                      refId="Package\Informacje o prowadzacych skladowych\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ID_Prowadzącego]"
+                      cachedDataType="i4"
+                      cachedName="ID_Prowadzącego"
+                      externalMetadataColumnId="Package\Informacje o prowadzacych skladowych\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Prowadzacego]"
+                      lineageId="Package\Informacje o prowadzacych skladowych\Merge Join 2.Outputs[Merge Join Output].Columns[ID_Prowadzącego]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -5101,79 +5107,79 @@ where [refTable].[ID_Skladowej] = ? and [refTable].[ID_Prowadzacego] = ?</proper
               startId="Package\Informacje o prowadzacych skladowych\Merge Join 5.Outputs[Merge Join Output]" />
             <path
               refId="Package\Informacje o prowadzacych skladowych.Paths[OLE DB Source Output5]"
-              endId="Package\Informacje o prowadzacych skladowych\Sort 2.Inputs[Sort Input]"
-              name="OLE DB Source Output"
-              startId="Package\Informacje o prowadzacych skladowych\Przedmioty-hurtownia.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Informacje o prowadzacych skladowych.Paths[OLE DB Source Output3]"
-              endId="Package\Informacje o prowadzacych skladowych\Sort 4.Inputs[Sort Input]"
-              name="OLE DB Source Output"
-              startId="Package\Informacje o prowadzacych skladowych\Skladowe_Przedmiotu-hurtownia.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Informacje o prowadzacych skladowych.Paths[OLE DB Source Output4]"
-              endId="Package\Informacje o prowadzacych skladowych\Sort 7.Inputs[Sort Input]"
-              name="OLE DB Source Output"
-              startId="Package\Informacje o prowadzacych skladowych\Skladowe_przedmiotu-szkola.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Informacje o prowadzacych skladowych.Paths[OLE DB Source Output1]"
-              endId="Package\Informacje o prowadzacych skladowych\Sort 1.Inputs[Sort Input]"
-              name="OLE DB Source Output"
-              startId="Package\Informacje o prowadzacych skladowych\Prowadzacy-szkola.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Informacje o prowadzacych skladowych.Paths[OLE DB Source Output]"
-              endId="Package\Informacje o prowadzacych skladowych\Sort.Inputs[Sort Input]"
-              name="OLE DB Source Output"
-              startId="Package\Informacje o prowadzacych skladowych\Prowadzacy_skladowych-szkola.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Informacje o prowadzacych skladowych.Paths[OLE DB Source Output2]"
               endId="Package\Informacje o prowadzacych skladowych\Sort 6.Inputs[Sort Input]"
               name="OLE DB Source Output"
               startId="Package\Informacje o prowadzacych skladowych\Prowadzacy-hurtownia.Outputs[OLE DB Source Output]" />
             <path
+              refId="Package\Informacje o prowadzacych skladowych.Paths[OLE DB Source Output3]"
+              endId="Package\Informacje o prowadzacych skladowych\Sort 1.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Informacje o prowadzacych skladowych\Prowadzacy-szkola.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Informacje o prowadzacych skladowych.Paths[OLE DB Source Output4]"
+              endId="Package\Informacje o prowadzacych skladowych\Sort.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Informacje o prowadzacych skladowych\Prowadzacy_skladowych-szkola.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Informacje o prowadzacych skladowych.Paths[OLE DB Source Output1]"
+              endId="Package\Informacje o prowadzacych skladowych\Sort 4.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Informacje o prowadzacych skladowych\Skladowe_Przedmiotu-hurtownia.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Informacje o prowadzacych skladowych.Paths[OLE DB Source Output]"
+              endId="Package\Informacje o prowadzacych skladowych\Sort 2.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Informacje o prowadzacych skladowych\Przedmioty-hurtownia.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Informacje o prowadzacych skladowych.Paths[OLE DB Source Output2]"
+              endId="Package\Informacje o prowadzacych skladowych\Sort 7.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Informacje o prowadzacych skladowych\Skladowe_przedmiotu-szkola.Outputs[OLE DB Source Output]" />
+            <path
               refId="Package\Informacje o prowadzacych skladowych.Paths[Sort Output8]"
+              endId="Package\Informacje o prowadzacych skladowych\Merge Join 6.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Informacje o prowadzacych skladowych\Sort 7.Outputs[Sort Output]" />
+            <path
+              refId="Package\Informacje o prowadzacych skladowych.Paths[Sort Output]"
               endId="Package\Informacje o prowadzacych skladowych\Merge Join.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\Informacje o prowadzacych skladowych\Sort.Outputs[Sort Output]" />
             <path
-              refId="Package\Informacje o prowadzacych skladowych.Paths[Sort Output]"
+              refId="Package\Informacje o prowadzacych skladowych.Paths[Sort Output1]"
               endId="Package\Informacje o prowadzacych skladowych\Merge Join 2.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\Informacje o prowadzacych skladowych\Sort 5.Outputs[Sort Output]" />
             <path
-              refId="Package\Informacje o prowadzacych skladowych.Paths[Sort Output1]"
+              refId="Package\Informacje o prowadzacych skladowych.Paths[Sort Output2]"
               endId="Package\Informacje o prowadzacych skladowych\Merge Join 2.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\Informacje o prowadzacych skladowych\Sort 6.Outputs[Sort Output]" />
             <path
-              refId="Package\Informacje o prowadzacych skladowych.Paths[Sort Output2]"
+              refId="Package\Informacje o prowadzacych skladowych.Paths[Sort Output3]"
               endId="Package\Informacje o prowadzacych skladowych\Merge Join 1.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\Informacje o prowadzacych skladowych\Sort 3.Outputs[Sort Output]" />
             <path
-              refId="Package\Informacje o prowadzacych skladowych.Paths[Sort Output3]"
+              refId="Package\Informacje o prowadzacych skladowych.Paths[Sort Output4]"
               endId="Package\Informacje o prowadzacych skladowych\Merge Join 6.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\Informacje o prowadzacych skladowych\Sort 10.Outputs[Sort Output]" />
             <path
-              refId="Package\Informacje o prowadzacych skladowych.Paths[Sort Output4]"
+              refId="Package\Informacje o prowadzacych skladowych.Paths[Sort Output5]"
               endId="Package\Informacje o prowadzacych skladowych\Merge Join 5.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\Informacje o prowadzacych skladowych\Sort 4.Outputs[Sort Output]" />
             <path
-              refId="Package\Informacje o prowadzacych skladowych.Paths[Sort Output5]"
+              refId="Package\Informacje o prowadzacych skladowych.Paths[Sort Output6]"
               endId="Package\Informacje o prowadzacych skladowych\Merge Join 1.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\Informacje o prowadzacych skladowych\Sort 11.Outputs[Sort Output]" />
             <path
-              refId="Package\Informacje o prowadzacych skladowych.Paths[Sort Output6]"
+              refId="Package\Informacje o prowadzacych skladowych.Paths[Sort Output7]"
               endId="Package\Informacje o prowadzacych skladowych\Merge Join 5.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\Informacje o prowadzacych skladowych\Sort 2.Outputs[Sort Output]" />
-            <path
-              refId="Package\Informacje o prowadzacych skladowych.Paths[Sort Output7]"
-              endId="Package\Informacje o prowadzacych skladowych\Merge Join 6.Inputs[Merge Join Left Input]"
-              name="Sort Output"
-              startId="Package\Informacje o prowadzacych skladowych\Sort 7.Outputs[Sort Output]" />
             <path
               refId="Package\Informacje o prowadzacych skladowych.Paths[Sort Output9]"
               endId="Package\Informacje o prowadzacych skladowych\Merge Join.Inputs[Merge Join Right Input]"
@@ -18624,129 +18630,129 @@ where [refTable].[ID_Studenta] = ? and [refTable].[ID_Skladowej] = ? and [refTab
               startId="Package\Informacje o Uzyskanych Ocenach\Merge Join 3.Outputs[Merge Join Output]" />
             <path
               refId="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output7]"
-              endId="Package\Informacje o Uzyskanych Ocenach\Sort 1.Inputs[Sort Input]"
-              name="OLE DB Source Output"
-              startId="Package\Informacje o Uzyskanych Ocenach\Studenci-hurtownia.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output5]"
-              endId="Package\Informacje o Uzyskanych Ocenach\Sort 15.Inputs[Sort Input]"
-              name="OLE DB Source Output"
-              startId="Package\Informacje o Uzyskanych Ocenach\Prowadzacy-szkola.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output4]"
-              endId="Package\Informacje o Uzyskanych Ocenach\Sort 12.Inputs[Sort Input]"
-              name="OLE DB Source Output"
-              startId="Package\Informacje o Uzyskanych Ocenach\Skladowe_przedmiotu-szkola.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output6]"
-              endId="Package\Informacje o Uzyskanych Ocenach\Sort 6.Inputs[Sort Input]"
-              name="OLE DB Source Output"
-              startId="Package\Informacje o Uzyskanych Ocenach\Data-hurtownia.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output2]"
-              endId="Package\Informacje o Uzyskanych Ocenach\Sort 10.Inputs[Sort Input]"
-              name="OLE DB Source Output"
-              startId="Package\Informacje o Uzyskanych Ocenach\Przedmioty-hurtownia.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output1]"
-              endId="Package\Informacje o Uzyskanych Ocenach\Sort 2.Inputs[Sort Input]"
-              name="OLE DB Source Output"
-              startId="Package\Informacje o Uzyskanych Ocenach\Skladowe_przedmiotu-hurtownia.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output]"
-              endId="Package\Informacje o Uzyskanych Ocenach\Sort.Inputs[Sort Input]"
-              name="OLE DB Source Output"
-              startId="Package\Informacje o Uzyskanych Ocenach\Prowadzacy-hurtownia.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output3]"
               endId="Package\Informacje o Uzyskanych Ocenach\Sort 5.Inputs[Sort Input]"
               name="OLE DB Source Output"
               startId="Package\Informacje o Uzyskanych Ocenach\Czas-hurtownia.Outputs[OLE DB Source Output]" />
             <path
+              refId="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output5]"
+              endId="Package\Informacje o Uzyskanych Ocenach\Sort 2.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Informacje o Uzyskanych Ocenach\Skladowe_przedmiotu-hurtownia.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output4]"
+              endId="Package\Informacje o Uzyskanych Ocenach\Sort 10.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Informacje o Uzyskanych Ocenach\Przedmioty-hurtownia.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output6]"
+              endId="Package\Informacje o Uzyskanych Ocenach\Sort.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Informacje o Uzyskanych Ocenach\Prowadzacy-hurtownia.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output2]"
+              endId="Package\Informacje o Uzyskanych Ocenach\Sort 12.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Informacje o Uzyskanych Ocenach\Skladowe_przedmiotu-szkola.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output1]"
+              endId="Package\Informacje o Uzyskanych Ocenach\Sort 15.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Informacje o Uzyskanych Ocenach\Prowadzacy-szkola.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output]"
+              endId="Package\Informacje o Uzyskanych Ocenach\Sort 1.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Informacje o Uzyskanych Ocenach\Studenci-hurtownia.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output3]"
+              endId="Package\Informacje o Uzyskanych Ocenach\Sort 6.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Informacje o Uzyskanych Ocenach\Data-hurtownia.Outputs[OLE DB Source Output]" />
+            <path
               refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output15]"
-              endId="Package\Informacje o Uzyskanych Ocenach\Merge Join 2.Inputs[Merge Join Left Input]"
-              name="Sort Output"
-              startId="Package\Informacje o Uzyskanych Ocenach\Sort 8.Outputs[Sort Output]" />
-            <path
-              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output14]"
-              endId="Package\Informacje o Uzyskanych Ocenach\Merge Join 3.Inputs[Merge Join Left Input]"
-              name="Sort Output"
-              startId="Package\Informacje o Uzyskanych Ocenach\Sort 10.Outputs[Sort Output]" />
-            <path
-              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output13]"
-              endId="Package\Informacje o Uzyskanych Ocenach\Merge Join 3.Inputs[Merge Join Right Input]"
-              name="Sort Output"
-              startId="Package\Informacje o Uzyskanych Ocenach\Sort 2.Outputs[Sort Output]" />
-            <path
-              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output12]"
-              endId="Package\Informacje o Uzyskanych Ocenach\Merge Join.Inputs[Merge Join Right Input]"
-              name="Sort Output"
-              startId="Package\Informacje o Uzyskanych Ocenach\Sort 4.Outputs[Sort Output]" />
-            <path
-              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output11]"
-              endId="Package\Informacje o Uzyskanych Ocenach\Merge Join 4.Inputs[Merge Join Left Input]"
-              name="Sort Output"
-              startId="Package\Informacje o Uzyskanych Ocenach\Sort 12.Outputs[Sort Output]" />
-            <path
-              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output10]"
-              endId="Package\Informacje o Uzyskanych Ocenach\Merge Join 4.Inputs[Merge Join Right Input]"
-              name="Sort Output"
-              startId="Package\Informacje o Uzyskanych Ocenach\Sort 11.Outputs[Sort Output]" />
-            <path
-              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output9]"
-              endId="Package\Informacje o Uzyskanych Ocenach\Merge Join 6.Inputs[Merge Join Left Input]"
-              name="Sort Output"
-              startId="Package\Informacje o Uzyskanych Ocenach\Sort 3.Outputs[Sort Output]" />
-            <path
-              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output8]"
-              endId="Package\Informacje o Uzyskanych Ocenach\Merge Join 2.Inputs[Merge Join Right Input]"
-              name="Sort Output"
-              startId="Package\Informacje o Uzyskanych Ocenach\Sort 9.Outputs[Sort Output]" />
-            <path
-              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output6]"
-              endId="Package\Informacje o Uzyskanych Ocenach\Merge Join 8.Inputs[Merge Join Left Input]"
-              name="Sort Output"
-              startId="Package\Informacje o Uzyskanych Ocenach\Sort 17.Outputs[Sort Output]" />
-            <path
-              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output5]"
-              endId="Package\Informacje o Uzyskanych Ocenach\Merge Join 8.Inputs[Merge Join Right Input]"
-              name="Sort Output"
-              startId="Package\Informacje o Uzyskanych Ocenach\Sort 16.Outputs[Sort Output]" />
-            <path
-              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output4]"
-              endId="Package\Informacje o Uzyskanych Ocenach\Merge Join 5.Inputs[Merge Join Right Input]"
-              name="Sort Output"
-              startId="Package\Informacje o Uzyskanych Ocenach\Sort 14.Outputs[Sort Output]" />
-            <path
-              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output3]"
-              endId="Package\Informacje o Uzyskanych Ocenach\Merge Join.Inputs[Merge Join Left Input]"
-              name="Sort Output"
-              startId="Package\Informacje o Uzyskanych Ocenach\Sort 6.Outputs[Sort Output]" />
-            <path
-              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output2]"
-              endId="Package\Informacje o Uzyskanych Ocenach\Merge Join 5.Inputs[Merge Join Left Input]"
-              name="Sort Output"
-              startId="Package\Informacje o Uzyskanych Ocenach\Sort 13.Outputs[Sort Output]" />
-            <path
-              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output1]"
-              endId="Package\Informacje o Uzyskanych Ocenach\Merge Join 1.Inputs[Merge Join Left Input]"
-              name="Sort Output"
-              startId="Package\Informacje o Uzyskanych Ocenach\Sort 7.Outputs[Sort Output]" />
-            <path
-              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output]"
-              endId="Package\Informacje o Uzyskanych Ocenach\Merge Join 7.Inputs[Merge Join Right Input]"
-              name="Sort Output"
-              startId="Package\Informacje o Uzyskanych Ocenach\Sort 15.Outputs[Sort Output]" />
-            <path
-              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output16]"
               endId="Package\Informacje o Uzyskanych Ocenach\Merge Join 6.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\Informacje o Uzyskanych Ocenach\Sort 1.Outputs[Sort Output]" />
             <path
-              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output7]"
+              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output14]"
+              endId="Package\Informacje o Uzyskanych Ocenach\Merge Join 7.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Informacje o Uzyskanych Ocenach\Sort 15.Outputs[Sort Output]" />
+            <path
+              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output13]"
+              endId="Package\Informacje o Uzyskanych Ocenach\Merge Join 1.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Informacje o Uzyskanych Ocenach\Sort 7.Outputs[Sort Output]" />
+            <path
+              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output12]"
+              endId="Package\Informacje o Uzyskanych Ocenach\Merge Join 5.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Informacje o Uzyskanych Ocenach\Sort 13.Outputs[Sort Output]" />
+            <path
+              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output11]"
+              endId="Package\Informacje o Uzyskanych Ocenach\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Informacje o Uzyskanych Ocenach\Sort 6.Outputs[Sort Output]" />
+            <path
+              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output10]"
+              endId="Package\Informacje o Uzyskanych Ocenach\Merge Join 5.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Informacje o Uzyskanych Ocenach\Sort 14.Outputs[Sort Output]" />
+            <path
+              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output9]"
+              endId="Package\Informacje o Uzyskanych Ocenach\Merge Join 8.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Informacje o Uzyskanych Ocenach\Sort 16.Outputs[Sort Output]" />
+            <path
+              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output8]"
+              endId="Package\Informacje o Uzyskanych Ocenach\Merge Join 8.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Informacje o Uzyskanych Ocenach\Sort 17.Outputs[Sort Output]" />
+            <path
+              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output6]"
+              endId="Package\Informacje o Uzyskanych Ocenach\Merge Join 6.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Informacje o Uzyskanych Ocenach\Sort 3.Outputs[Sort Output]" />
+            <path
+              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output5]"
+              endId="Package\Informacje o Uzyskanych Ocenach\Merge Join 4.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Informacje o Uzyskanych Ocenach\Sort 11.Outputs[Sort Output]" />
+            <path
+              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output4]"
+              endId="Package\Informacje o Uzyskanych Ocenach\Merge Join 4.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Informacje o Uzyskanych Ocenach\Sort 12.Outputs[Sort Output]" />
+            <path
+              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output3]"
+              endId="Package\Informacje o Uzyskanych Ocenach\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Informacje o Uzyskanych Ocenach\Sort 4.Outputs[Sort Output]" />
+            <path
+              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output2]"
+              endId="Package\Informacje o Uzyskanych Ocenach\Merge Join 3.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Informacje o Uzyskanych Ocenach\Sort 2.Outputs[Sort Output]" />
+            <path
+              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output1]"
+              endId="Package\Informacje o Uzyskanych Ocenach\Merge Join 3.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Informacje o Uzyskanych Ocenach\Sort 10.Outputs[Sort Output]" />
+            <path
+              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output]"
+              endId="Package\Informacje o Uzyskanych Ocenach\Merge Join 2.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Informacje o Uzyskanych Ocenach\Sort 8.Outputs[Sort Output]" />
+            <path
+              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output16]"
               endId="Package\Informacje o Uzyskanych Ocenach\Merge Join 7.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\Informacje o Uzyskanych Ocenach\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output7]"
+              endId="Package\Informacje o Uzyskanych Ocenach\Merge Join 2.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Informacje o Uzyskanych Ocenach\Sort 9.Outputs[Sort Output]" />
             <path
               refId="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output17]"
               endId="Package\Informacje o Uzyskanych Ocenach\Merge Join 1.Inputs[Merge Join Right Input]"
@@ -20938,9 +20944,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20962,9 +20966,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20998,9 +21000,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -21130,9 +21130,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -21154,9 +21152,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -21178,9 +21174,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -21301,13 +21295,45 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="215,42"
-          Id="Package\Informacje o prowadzacych skladowych\Skladowe_przedmiotu-szkola"
-          TopLeft="1331.75,503.75" />
+          Size="139,42"
+          Id="Package\Informacje o prowadzacych skladowych\Merge Join 2"
+          TopLeft="470,359" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Informacje o prowadzacych skladowych\Prowadzacy-szkola"
+          TopLeft="1502,210.5" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Informacje o prowadzacych skladowych\Sort 5"
+          TopLeft="557.75,275.5" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Informacje o prowadzacych skladowych\Sort"
+          TopLeft="1340,128.5" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Informacje o prowadzacych skladowych\OLE DB Destination"
+          TopLeft="248,501" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Informacje o prowadzacych skladowych\Sort 11"
+          TopLeft="818.5,349.5" />
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Informacje o prowadzacych skladowych\Prowadzacy-hurtownia"
+          TopLeft="655,445" />
+        <NodeLayout
+          Size="115,42"
+          Id="Package\Informacje o prowadzacych skladowych\Lookup"
+          TopLeft="275,424" />
         <NodeLayout
           Size="227,42"
           Id="Package\Informacje o prowadzacych skladowych\Prowadzacy_skladowych-szkola"
           TopLeft="1497.5,95" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Informacje o prowadzacych skladowych\Sort 1"
+          TopLeft="1348.5,233" />
         <NodeLayout
           Size="107,48"
           Id="Package\Informacje o prowadzacych skladowych\Sort 3"
@@ -21318,8 +21344,16 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           TopLeft="775.5,237" />
         <NodeLayout
           Size="107,42"
-          Id="Package\Informacje o prowadzacych skladowych\Sort 5"
-          TopLeft="557.75,275.5" />
+          Id="Package\Informacje o prowadzacych skladowych\Sort 4"
+          TopLeft="1157,406" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\Informacje o prowadzacych skladowych\Skladowe_przedmiotu-szkola"
+          TopLeft="1331.75,503.75" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Informacje o prowadzacych skladowych\Merge Join 5"
+          TopLeft="993,339" />
         <NodeLayout
           Size="107,42"
           Id="Package\Informacje o prowadzacych skladowych\Sort 6"
@@ -21329,17 +21363,9 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           Id="Package\Informacje o prowadzacych skladowych\Skladowe_Przedmiotu-hurtownia"
           TopLeft="1333,403" />
         <NodeLayout
-          Size="139,42"
-          Id="Package\Informacje o prowadzacych skladowych\Merge Join 5"
-          TopLeft="993,339" />
-        <NodeLayout
-          Size="107,42"
-          Id="Package\Informacje o prowadzacych skladowych\Sort 2"
-          TopLeft="1176,316" />
-        <NodeLayout
-          Size="107,42"
-          Id="Package\Informacje o prowadzacych skladowych\Sort 4"
-          TopLeft="1157,406" />
+          Size="107,45"
+          Id="Package\Informacje o prowadzacych skladowych\Sort 7"
+          TopLeft="1084,486" />
         <NodeLayout
           Size="182,42"
           Id="Package\Informacje o prowadzacych skladowych\Przedmioty-hurtownia"
@@ -21349,75 +21375,47 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           Id="Package\Informacje o prowadzacych skladowych\Sort 10"
           TopLeft="994,415" />
         <NodeLayout
+          Size="107,42"
+          Id="Package\Informacje o prowadzacych skladowych\Sort 2"
+          TopLeft="1176,316" />
+        <NodeLayout
           Size="139,42"
           Id="Package\Informacje o prowadzacych skladowych\Merge Join 6"
           TopLeft="815,416" />
-        <NodeLayout
-          Size="173,42"
-          Id="Package\Informacje o prowadzacych skladowych\OLE DB Destination"
-          TopLeft="248,501" />
         <NodeLayout
           Size="130,42"
           Id="Package\Informacje o prowadzacych skladowych\Merge Join"
           TopLeft="1149.75,236.75" />
         <NodeLayout
-          Size="185,42"
-          Id="Package\Informacje o prowadzacych skladowych\Prowadzacy-hurtownia"
-          TopLeft="655,445" />
-        <NodeLayout
-          Size="139,42"
-          Id="Package\Informacje o prowadzacych skladowych\Merge Join 2"
-          TopLeft="470,359" />
-        <NodeLayout
-          Size="167,42"
-          Id="Package\Informacje o prowadzacych skladowych\Prowadzacy-szkola"
-          TopLeft="1502,210.5" />
-        <NodeLayout
-          Size="107,45"
-          Id="Package\Informacje o prowadzacych skladowych\Sort 7"
-          TopLeft="1084,486" />
-        <NodeLayout
-          Size="113,42"
-          Id="Package\Informacje o prowadzacych skladowych\Sort 11"
-          TopLeft="818.5,349.5" />
-        <NodeLayout
-          Size="107,42"
-          Id="Package\Informacje o prowadzacych skladowych\Sort 1"
-          TopLeft="1348.5,233" />
-        <NodeLayout
           Size="156,42"
           Id="Package\Informacje o prowadzacych skladowych\Derived Column"
           TopLeft="255,359" />
-        <NodeLayout
-          Size="98,42"
-          Id="Package\Informacje o prowadzacych skladowych\Sort"
-          TopLeft="1340,128.5" />
         <EdgeLayout
-          Id="Package\Informacje o prowadzacych skladowych.Paths[Sort Output]"
-          TopLeft="611.25,317.5">
+          Id="Package\Informacje o prowadzacych skladowych.Paths[Merge Join Output3]"
+          TopLeft="884.5,416">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-71.75,41.5"
+              EndConnector="-9.5,-24.5"
               Start="0,0"
-              End="-71.75,34">
+              End="-9.5,-17">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.75" />
+                    End="0,-8.25" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.75"
-                    Point2="0,20.75"
-                    Point3="-4,20.75" />
+                    Point1="0,-8.25"
+                    Point2="0,-12.25"
+                    Point3="-4,-12.25" />
                   <mssgle:LineSegment
-                    End="-67.75,20.75" />
+                    End="-5.5,-12.25" />
                   <mssgle:CubicBezierSegment
-                    Point1="-67.75,20.75"
-                    Point2="-71.75,20.75"
-                    Point3="-71.75,24.75" />
+                    Point1="-5.5,-12.25"
+                    Point2="-9.5,-12.25"
+                    Point3="-9.5,-16.25" />
                   <mssgle:LineSegment
-                    End="-71.75,34" />
+                    End="-9.5,-17" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -21427,19 +21425,19 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o prowadzacych skladowych.Paths[Sort Output1]"
-          TopLeft="660,380.25">
+          Id="Package\Informacje o prowadzacych skladowych.Paths[Merge Join Output2]"
+          TopLeft="1149.75,261.25">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-51,0"
+              EndConnector="-68,0"
               Start="0,0"
-              End="-43.5,0">
+              End="-60.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-43.5,0" />
+                    End="-60.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -21449,425 +21447,19 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o prowadzacych skladowych.Paths[Sort Output2]"
-          TopLeft="974.75,261.375">
+          Id="Package\Informacje o prowadzacych skladowych.Paths[Merge Join Output1]"
+          TopLeft="470,380">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-60.25,0"
+              EndConnector="-59,0"
               Start="0,0"
-              End="-52.75,0">
+              End="-51.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-52.75,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Informacje o prowadzacych skladowych.Paths[Sort Output3]"
-          TopLeft="994,436.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-40,0"
-              Start="0,0"
-              End="-32.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-32.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Informacje o prowadzacych skladowych.Paths[Sort Output8]"
-          TopLeft="1389,170.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-174.25,66.25"
-              Start="0,0"
-              End="-174.25,58.75">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.125" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.125"
-                    Point2="0,33.125"
-                    Point3="-4,33.125" />
-                  <mssgle:LineSegment
-                    End="-170.25,33.125" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-170.25,33.125"
-                    Point2="-174.25,33.125"
-                    Point3="-174.25,37.125" />
-                  <mssgle:LineSegment
-                    End="-174.25,58.75" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Informacje o prowadzacych skladowych.Paths[Sort Output5]"
-          TopLeft="875,349.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-30,-70.5"
-              Start="0,0"
-              End="-30,-63">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-31.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-31.25"
-                    Point2="0,-35.25"
-                    Point3="-4,-35.25" />
-                  <mssgle:LineSegment
-                    End="-26,-35.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-26,-35.25"
-                    Point2="-30,-35.25"
-                    Point3="-30,-39.25" />
-                  <mssgle:LineSegment
-                    End="-30,-63" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Informacje o prowadzacych skladowych.Paths[Sort Output6]"
-          TopLeft="1176,337">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-44,23"
-              Start="0,0"
-              End="-36.5,23">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-18,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-18,0"
-                    Point2="-22,0"
-                    Point3="-22,4" />
-                  <mssgle:LineSegment
-                    End="-22,19" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-22,19"
-                    Point2="-22,23"
-                    Point3="-26,23" />
-                  <mssgle:LineSegment
-                    End="-36.5,23" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Informacje o prowadzacych skladowych.Paths[Sort Output4]"
-          TopLeft="1210.5,406">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-126.166666666667,-25"
-              Start="0,0"
-              End="-126.166666666667,-17.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-10.8293029871977" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-10.8293029871977"
-                    Point2="0,-14.8293029871977"
-                    Point3="-4,-14.8293029871977" />
-                  <mssgle:LineSegment
-                    End="-122.166666666667,-14.8293029871977" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-122.166666666667,-14.8293029871977"
-                    Point2="-126.166666666667,-14.8293029871977"
-                    Point3="-126.166666666667,-18.8293029871977" />
-                  <mssgle:LineSegment
-                    End="-126.166666666667,-17.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Informacje o prowadzacych skladowych.Paths[Sort Output7]"
-          TopLeft="1137.5,486">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-253,-28"
-              Start="0,0"
-              End="-253,-20.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-10" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-10"
-                    Point2="0,-14"
-                    Point3="-4,-14" />
-                  <mssgle:LineSegment
-                    End="-249,-14" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-249,-14"
-                    Point2="-253,-14"
-                    Point3="-253,-18" />
-                  <mssgle:LineSegment
-                    End="-253,-20.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Informacje o prowadzacych skladowych.Paths[Sort Output9]"
-          TopLeft="1348.5,255.875">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-68.7500000000002,0"
-              Start="0,0"
-              End="-61.2500000000002,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-61.2500000000002,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Informacje o prowadzacych skladowych.Paths[OLE DB Source Output5]"
-          TopLeft="1337,327">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-54,10"
-              Start="0,0"
-              End="-46.5,10">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-23,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-23,0"
-                    Point2="-27,0"
-                    Point3="-27,4" />
-                  <mssgle:LineSegment
-                    End="-27,6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-27,6"
-                    Point2="-27,10"
-                    Point3="-31,10" />
-                  <mssgle:LineSegment
-                    End="-46.5,10" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Informacje o prowadzacych skladowych.Paths[OLE DB Source Output4]"
-          TopLeft="1331.75,524.75">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-140.75,-16.25"
-              Start="0,0"
-              End="-133.25,-16.25">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-66.375,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-66.375,0"
-                    Point2="-70.375,0"
-                    Point3="-70.375,-4" />
-                  <mssgle:LineSegment
-                    End="-70.375,-12.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-70.375,-12.25"
-                    Point2="-70.375,-16.25"
-                    Point3="-74.375,-16.25" />
-                  <mssgle:LineSegment
-                    End="-133.25,-16.25" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Informacje o prowadzacych skladowych.Paths[OLE DB Source Output3]"
-          TopLeft="1333,425.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-69,0"
-              Start="0,0"
-              End="-61.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-61.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Informacje o prowadzacych skladowych.Paths[OLE DB Source Output2]"
-          TopLeft="747.5,445">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-34,-43.5"
-              Start="0,0"
-              End="-34,-36">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-17.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-17.75"
-                    Point2="0,-21.75"
-                    Point3="-4,-21.75" />
-                  <mssgle:LineSegment
-                    End="-30,-21.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-30,-21.75"
-                    Point2="-34,-21.75"
-                    Point3="-34,-25.75" />
-                  <mssgle:LineSegment
-                    End="-34,-36" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Informacje o prowadzacych skladowych.Paths[OLE DB Source Output1]"
-          TopLeft="1502,231.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-46.4999999999998,22.5"
-              Start="0,0"
-              End="-38.9999999999998,22.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-19.2499999999999,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-19.2499999999999,0"
-                    Point2="-23.2499999999999,0"
-                    Point3="-23.2499999999999,4" />
-                  <mssgle:LineSegment
-                    End="-23.2499999999999,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-23.2499999999999,18.5"
-                    Point2="-23.2499999999999,22.5"
-                    Point3="-27.2499999999999,22.5" />
-                  <mssgle:LineSegment
-                    End="-38.9999999999998,22.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Informacje o prowadzacych skladowych.Paths[OLE DB Source Output]"
-          TopLeft="1497.5,116">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-59.5,33.5"
-              Start="0,0"
-              End="-52,33.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-25.75,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-25.75,0"
-                    Point2="-29.75,0"
-                    Point3="-29.75,4" />
-                  <mssgle:LineSegment
-                    End="-29.75,29.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-29.75,29.5"
-                    Point2="-29.75,33.5"
-                    Point3="-33.75,33.5" />
-                  <mssgle:LineSegment
-                    End="-52,33.5" />
+                    End="-51.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -21911,6 +21503,536 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Informacje o prowadzacych skladowych.Paths[Lookup No Match Output]"
+          TopLeft="333.5,466">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,7.9453125,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o prowadzacych skladowych.Paths[Derived Column Output]"
+          TopLeft="332.75,401">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23"
+              Start="0,0"
+              End="0,15.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o prowadzacych skladowych.Paths[Sort Output9]"
+          TopLeft="1348.5,255.875">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-68.7500000000002,0"
+              Start="0,0"
+              End="-61.2500000000002,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-61.2500000000002,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o prowadzacych skladowych.Paths[Sort Output]"
+          TopLeft="1389,170.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-174.25,66.25"
+              Start="0,0"
+              End="-174.25,58.75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.125" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.125"
+                    Point2="0,33.125"
+                    Point3="-4,33.125" />
+                  <mssgle:LineSegment
+                    End="-170.25,33.125" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-170.25,33.125"
+                    Point2="-174.25,33.125"
+                    Point3="-174.25,37.125" />
+                  <mssgle:LineSegment
+                    End="-174.25,58.75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o prowadzacych skladowych.Paths[Sort Output8]"
+          TopLeft="1137.5,486">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-253,-28"
+              Start="0,0"
+              End="-253,-20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-10" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-10"
+                    Point2="0,-14"
+                    Point3="-4,-14" />
+                  <mssgle:LineSegment
+                    End="-249,-14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-249,-14"
+                    Point2="-253,-14"
+                    Point3="-253,-18" />
+                  <mssgle:LineSegment
+                    End="-253,-20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o prowadzacych skladowych.Paths[Sort Output7]"
+          TopLeft="1176,337">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-44,23"
+              Start="0,0"
+              End="-36.5,23">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18,0"
+                    Point2="-22,0"
+                    Point3="-22,4" />
+                  <mssgle:LineSegment
+                    End="-22,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22,19"
+                    Point2="-22,23"
+                    Point3="-26,23" />
+                  <mssgle:LineSegment
+                    End="-36.5,23" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o prowadzacych skladowych.Paths[Sort Output6]"
+          TopLeft="875,349.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-30,-70.5"
+              Start="0,0"
+              End="-30,-63">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-31.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-31.25"
+                    Point2="0,-35.25"
+                    Point3="-4,-35.25" />
+                  <mssgle:LineSegment
+                    End="-26,-35.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-26,-35.25"
+                    Point2="-30,-35.25"
+                    Point3="-30,-39.25" />
+                  <mssgle:LineSegment
+                    End="-30,-63" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o prowadzacych skladowych.Paths[Sort Output5]"
+          TopLeft="1210.5,406">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-126.166666666667,-25"
+              Start="0,0"
+              End="-126.166666666667,-17.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-10.8293029871977" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-10.8293029871977"
+                    Point2="0,-14.8293029871977"
+                    Point3="-4,-14.8293029871977" />
+                  <mssgle:LineSegment
+                    End="-122.166666666667,-14.8293029871977" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-122.166666666667,-14.8293029871977"
+                    Point2="-126.166666666667,-14.8293029871977"
+                    Point3="-126.166666666667,-18.8293029871977" />
+                  <mssgle:LineSegment
+                    End="-126.166666666667,-17.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o prowadzacych skladowych.Paths[Sort Output4]"
+          TopLeft="994,436.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-40,0"
+              Start="0,0"
+              End="-32.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-32.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o prowadzacych skladowych.Paths[Sort Output3]"
+          TopLeft="974.75,261.375">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-60.25,0"
+              Start="0,0"
+              End="-52.75,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-52.75,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o prowadzacych skladowych.Paths[Sort Output2]"
+          TopLeft="660,380.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-51,0"
+              Start="0,0"
+              End="-43.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-43.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o prowadzacych skladowych.Paths[Sort Output1]"
+          TopLeft="611.25,317.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-71.75,41.5"
+              Start="0,0"
+              End="-71.75,34">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.75"
+                    Point2="0,20.75"
+                    Point3="-4,20.75" />
+                  <mssgle:LineSegment
+                    End="-67.75,20.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-67.75,20.75"
+                    Point2="-71.75,20.75"
+                    Point3="-71.75,24.75" />
+                  <mssgle:LineSegment
+                    End="-71.75,34" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o prowadzacych skladowych.Paths[OLE DB Source Output]"
+          TopLeft="1337,327">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-54,10"
+              Start="0,0"
+              End="-46.5,10">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-23,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-23,0"
+                    Point2="-27,0"
+                    Point3="-27,4" />
+                  <mssgle:LineSegment
+                    End="-27,6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-27,6"
+                    Point2="-27,10"
+                    Point3="-31,10" />
+                  <mssgle:LineSegment
+                    End="-46.5,10" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o prowadzacych skladowych.Paths[OLE DB Source Output2]"
+          TopLeft="1331.75,524.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-140.75,-16.25"
+              Start="0,0"
+              End="-133.25,-16.25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-66.375,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-66.375,0"
+                    Point2="-70.375,0"
+                    Point3="-70.375,-4" />
+                  <mssgle:LineSegment
+                    End="-70.375,-12.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-70.375,-12.25"
+                    Point2="-70.375,-16.25"
+                    Point3="-74.375,-16.25" />
+                  <mssgle:LineSegment
+                    End="-133.25,-16.25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o prowadzacych skladowych.Paths[OLE DB Source Output1]"
+          TopLeft="1333,425.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-69,0"
+              Start="0,0"
+              End="-61.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-61.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o prowadzacych skladowych.Paths[OLE DB Source Output5]"
+          TopLeft="747.5,445">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-34,-43.5"
+              Start="0,0"
+              End="-34,-36">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-17.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-17.75"
+                    Point2="0,-21.75"
+                    Point3="-4,-21.75" />
+                  <mssgle:LineSegment
+                    End="-30,-21.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-30,-21.75"
+                    Point2="-34,-21.75"
+                    Point3="-34,-25.75" />
+                  <mssgle:LineSegment
+                    End="-34,-36" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o prowadzacych skladowych.Paths[OLE DB Source Output3]"
+          TopLeft="1502,231.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-46.4999999999998,22.5"
+              Start="0,0"
+              End="-38.9999999999998,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-19.2499999999999,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-19.2499999999999,0"
+                    Point2="-23.2499999999999,0"
+                    Point3="-23.2499999999999,4" />
+                  <mssgle:LineSegment
+                    End="-23.2499999999999,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-23.2499999999999,18.5"
+                    Point2="-23.2499999999999,22.5"
+                    Point3="-27.2499999999999,22.5" />
+                  <mssgle:LineSegment
+                    End="-38.9999999999998,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o prowadzacych skladowych.Paths[OLE DB Source Output4]"
+          TopLeft="1497.5,116">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-59.5,33.5"
+              Start="0,0"
+              End="-52,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-25.75,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-25.75,0"
+                    Point2="-29.75,0"
+                    Point3="-29.75,4" />
+                  <mssgle:LineSegment
+                    End="-29.75,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-29.75,29.5"
+                    Point2="-29.75,33.5"
+                    Point3="-33.75,33.5" />
+                  <mssgle:LineSegment
+                    End="-52,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Informacje o prowadzacych skladowych.Paths[Merge Join Output4]"
           TopLeft="1040.66666666667,381">
           <EdgeLayout.Curve>
@@ -21944,178 +22066,11 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Informacje o prowadzacych skladowych.Paths[Merge Join Output2]"
-          TopLeft="1149.75,261.25">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-68,0"
-              Start="0,0"
-              End="-60.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-60.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Informacje o prowadzacych skladowych.Paths[Merge Join Output3]"
-          TopLeft="884.5,416">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-9.5,-24.5"
-              Start="0,0"
-              End="-9.5,-17">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-8.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-8.25"
-                    Point2="0,-12.25"
-                    Point3="-4,-12.25" />
-                  <mssgle:LineSegment
-                    End="-5.5,-12.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-5.5,-12.25"
-                    Point2="-9.5,-12.25"
-                    Point3="-9.5,-16.25" />
-                  <mssgle:LineSegment
-                    End="-9.5,-17" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Informacje o prowadzacych skladowych.Paths[Merge Join Output1]"
-          TopLeft="470,380">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-59,0"
-              Start="0,0"
-              End="-51.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-51.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="115,42"
-          Id="Package\Informacje o prowadzacych skladowych\Lookup"
-          TopLeft="275,424" />
-        <EdgeLayout
-          Id="Package\Informacje o prowadzacych skladowych.Paths[Derived Column Output]"
-          TopLeft="332.75,401">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,23"
-              Start="0,0"
-              End="0,15.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Informacje o prowadzacych skladowych.Paths[Lookup No Match Output]"
-          TopLeft="333.5,466">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,35"
-              Start="0,0"
-              End="0,27.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,7.9453125,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Informacje o prowadzacych skladowych\Skladowe_przedmiotu-szkola">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Informacje o prowadzacych skladowych\Prowadzacy_skladowych-szkola">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Informacje o prowadzacych skladowych\Skladowe_Przedmiotu-hurtownia">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Informacje o prowadzacych skladowych\Przedmioty-hurtownia">
+    design-time-name="Package\Informacje o prowadzacych skladowych\Prowadzacy-szkola">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -22154,7 +22109,69 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Informacje o prowadzacych skladowych\Prowadzacy-szkola">
+    design-time-name="Package\Informacje o prowadzacych skladowych\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[ProwadzacySkladowych]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Informacje o prowadzacych skladowych\Prowadzacy_skladowych-szkola">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Informacje o prowadzacych skladowych\Skladowe_przedmiotu-szkola">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Informacje o prowadzacych skladowych\Skladowe_Przedmiotu-hurtownia">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Informacje o prowadzacych skladowych\Przedmioty-hurtownia">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -22563,19 +22580,6 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Informacje o przedmiotach\Przedmioty-szkola">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Informacje o przedmiotach\OLE DB Destination">
     <Properties>
       <Property>
@@ -22611,6 +22615,42 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Informacje o przedmiotach\Przedmioty-szkola">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Informacje o przedmiotach\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Przedmioty]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -23163,6 +23203,19 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Informacje o skladowych przedmiotu\Prowadzacy-hurtownia">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Informacje o skladowych przedmiotu\Przedmioty-hurtownia">
     <Properties>
       <Property>
@@ -23172,6 +23225,29 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Informacje o skladowych przedmiotu\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[SkladowePrzedmiotu]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -23203,19 +23279,6 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Informacje o skladowych przedmiotu\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Informacje o skladowych przedmiotu\Prowadzacy-hurtownia">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -23345,6 +23408,29 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Informacje o studentach\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Studenci]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Informacje o studentach\OLE DB Source">
     <Properties>
@@ -23520,7 +23606,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           Id="Package\Informacje o Uzyskanych Ocenach\Sort 9"
           TopLeft="785.888888888888,362" />
         <EdgeLayout
-          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output1]"
+          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output13]"
           TopLeft="1094.88888888889,427">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23554,7 +23640,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output2]"
+          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output12]"
           TopLeft="714.277777777777,602.222222222222">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23588,7 +23674,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output3]"
+          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output11]"
           TopLeft="1160.38888888889,164">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23622,7 +23708,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output4]"
+          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output10]"
           TopLeft="723.166666666666,490.888888888889">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23656,7 +23742,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output5]"
+          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output9]"
           TopLeft="75.3888888888889,422">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23690,7 +23776,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output6]"
+          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output8]"
           TopLeft="194.444444444444,465.444444444444">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23724,7 +23810,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output]"
+          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output14]"
           TopLeft="249.305555555556,303.111111111111">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23746,7 +23832,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output7]"
+          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output16]"
           TopLeft="364.444444444444,314.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23780,7 +23866,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output16]"
+          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output15]"
           TopLeft="503.722222222221,359.111111111111">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23814,7 +23900,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output9]"
+          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output6]"
           TopLeft="463.5,461.111111111111">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23848,7 +23934,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output10]"
+          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output5]"
           TopLeft="934.277777777777,670.888888888889">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23882,7 +23968,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output11]"
+          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output4]"
           TopLeft="1034.44444444444,711">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23916,7 +24002,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output12]"
+          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output3]"
           TopLeft="1127.88888888889,250">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23950,7 +24036,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output13]"
+          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output2]"
           TopLeft="1022.88888888889,512">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23984,7 +24070,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output14]"
+          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output1]"
           TopLeft="1051.11111111111,604.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24018,7 +24104,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output8]"
+          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output7]"
           TopLeft="785.888888888888,382.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24040,7 +24126,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output15]"
+          Id="Package\Informacje o Uzyskanych Ocenach.Paths[Sort Output]"
           TopLeft="796.888888888888,313">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24108,7 +24194,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output]"
+          Id="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output6]"
           TopLeft="485.277777777778,233.777777777778">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24142,7 +24228,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output1]"
+          Id="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output5]"
           TopLeft="1226.88888888889,510">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24164,7 +24250,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output2]"
+          Id="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output4]"
           TopLeft="1230,603.222222222222">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24186,7 +24272,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output7]"
+          Id="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output]"
           TopLeft="774.555555555555,229.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24220,7 +24306,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output3]"
+          Id="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output7]"
           TopLeft="1247.88888888889,355.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24242,7 +24328,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output4]"
+          Id="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output2]"
           TopLeft="1225.55555555555,694.333333333334">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24276,7 +24362,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output5]"
+          Id="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output1]"
           TopLeft="293.5,236.444444444444">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24310,7 +24396,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output6]"
+          Id="Package\Informacje o Uzyskanych Ocenach.Paths[OLE DB Source Output3]"
           TopLeft="1303.88888888889,112">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24741,19 +24827,6 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Informacje o Uzyskanych Ocenach\Prowadzacy-szkola">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Informacje o Uzyskanych Ocenach\Data-hurtownia">
     <Properties>
       <Property>
@@ -24767,7 +24840,95 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Informacje o Uzyskanych Ocenach\Skladowe_przedmiotu-szkola">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Informacje o Uzyskanych Ocenach\Czas-hurtownia">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Informacje o Uzyskanych Ocenach\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Informacje o Uzyskanych Ocenach\Prowadzacy-szkola">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Informacje o Uzyskanych Ocenach\Studenci-hurtownia">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Informacje o Uzyskanych Ocenach\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[UzyskaneOceny]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Informacje o Uzyskanych Ocenach\Skladowe_przedmiotu-hurtownia">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -24794,58 +24955,6 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Informacje o Uzyskanych Ocenach\Prowadzacy-hurtownia">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Informacje o Uzyskanych Ocenach\Skladowe_przedmiotu-szkola">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Informacje o Uzyskanych Ocenach\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Informacje o Uzyskanych Ocenach\Skladowe_przedmiotu-hurtownia">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Informacje o Uzyskanych Ocenach\Studenci-hurtownia">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -25192,32 +25301,6 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Informacje o wynikach\Wyniki-szkola">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Informacje o wynikach\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Informacje o wynikach\Studenci-hurtownia">
     <Properties>
       <Property>
@@ -25244,71 +25327,28 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Informacje o studentach\Lookup">
+    design-time-name="Package\Informacje o wynikach\Wyniki-szkola">
     <Properties>
       <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Studenci]</Value>
+        <Name>DataSourceViewID</Name>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Informacje o przedmiotach\Lookup">
+    design-time-name="Package\Informacje o wynikach\OLE DB Destination">
     <Properties>
       <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Przedmioty]</Value>
+        <Name>DataSourceViewID</Name>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Informacje o skladowych przedmiotu\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[SkladowePrzedmiotu]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -25318,7 +25358,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -25328,53 +25368,7 @@ where [refTable].[ID_Przedmiotu] = ? and [refTable].[ID_Studenta] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Informacje o prowadzacych skladowych\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[ProwadzacySkladowych]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Informacje o Uzyskanych Ocenach\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[UzyskaneOceny]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
