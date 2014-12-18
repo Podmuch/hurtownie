@@ -1,0 +1,16 @@
+WITH
+SET [Prowadzacy zajecia] As
+'Filter(([ID Prowadzacego].[Imie I Nazwisko].Children, [ID Prowadzacego].[PESEL].Children, [Skladowe Przedmiotu].[Nazwa Skladowej].Children, [Przedmioty].[Nazwa Przedmiotu].Children), [Measures].[sredni wynik]>1)'
+MEMBER [Measures].[sredni wynik] AS
+'3+([Measures].[Wynik Procentowy]/[Measures].[Uzyskane Oceny Count]-50)/20', FORMAT_STRING = '#.###'
+MEMBER [Measures].[roznica wyniku] AS
+'100*([Prowadzacy zajecia], [Data].[Od roku do dnia].[Semestr].[letni], [Measures].[sredni wynik])/([Prowadzacy zajecia],[Data].[Od roku do dnia].[Semestr].[zimowy], [Measures].[sredni wynik])-100', FORMAT_STRING = '#.###'
+MEMBER [Measures].[srednia roznica] AS
+'AVG([Prowadzacy zajecia], [Measures].[roznica wyniku])'
+
+SELECT
+{[Measures].[sredni wynik]} ON COLUMNS,
+{
+Filter(([ID Prowadzacego].[Imie I Nazwisko].Children, [ID Prowadzacego].[PESEL].Children, [Skladowe Przedmiotu].[Nazwa Skladowej].Children, [Przedmioty].[Nazwa Przedmiotu].Children, [Data].[Semestr].Children), [Measures].[sredni wynik]>1)
+} ON ROWS
+FROM [Hurtownia Szkola]

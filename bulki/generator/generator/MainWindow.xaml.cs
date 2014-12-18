@@ -184,23 +184,23 @@ namespace generator
         private void losujWyniki()
         {
             wylosowaneWyniki.Clear();
-            foreach (var studenci in wylosowaniStudenci)
+            for(int i=0;i<wylosowaniStudenci.Count;i++)
             {
-                while (studenci.wyniki.Count<studenci.semestr*5)
+                while (wylosowaniStudenci[i].wyniki.Count < wylosowaniStudenci[i].semestr * 5)
                 {
                     var przedmiot = wylosowanePrzedmioty[rand.Next(0, wylosowanePrzedmioty.Count)];
-                    var przedmiotstudenta = studenci.wyniki.Find((x) => x.idprzedmiotu == przedmiot.id);
+                    var przedmiotstudenta = wylosowaniStudenci[i].wyniki.Find((x) => x.idprzedmiotu == przedmiot.id);
                     if (przedmiotstudenta != null)
                     {
                         przedmiotstudenta.wynik = rand.Next(4, 12)*0.5f;
                     }
                     else
                     {
-                        studenci.wyniki.Add(new Wyniki(przedmiot.id, przedmiot.nazwa,
-                            studenci.nrindeksu, rand.Next(4, 12) * 0.5f));
+                        wylosowaniStudenci[i].wyniki.Add(new Wyniki(przedmiot.id, przedmiot.nazwa,
+                            wylosowaniStudenci[i].nrindeksu, rand.Next(4, 12) * 0.5f));
                     }
                 }
-                wylosowaneWyniki.AddRange(studenci.wyniki);
+                wylosowaneWyniki.AddRange(wylosowaniStudenci[i].wyniki);
             }
         }
 
@@ -262,17 +262,23 @@ namespace generator
                         prowadzacy.tytul = "prof";
                         break;
                 }
+                wylosowaniProwadzacy.Remove(prowadzacy);
+                wylosowaniProwadzacy.Add(prowadzacy);
             }
             for (int i = 0; i < rand.Next(0, wylosowaniProwadzacy.Count / 10); i++)
             {
                 var prowadzacy = wylosowaniProwadzacy[rand.Next(0, wylosowaniProwadzacy.Count)];
                 prowadzacy.nazwisko = nazwiska[rand.Next(0, nazwiska.Count)];
+                wylosowaniProwadzacy.Remove(prowadzacy);
+                wylosowaniProwadzacy.Add(prowadzacy);
             }
             for (int i = 0; i < rand.Next(0, wylosowaniProwadzacy.Count / 10); i++)
             {
                 var prowadzacy = wylosowaniProwadzacy[rand.Next(0, wylosowaniProwadzacy.Count)];
                 prowadzacy.wiek += 1;
-                prowadzacy.staz += 1; 
+                prowadzacy.staz += 1;
+                wylosowaniProwadzacy.Remove(prowadzacy);
+                wylosowaniProwadzacy.Add(prowadzacy);
             }
         }
 
@@ -283,15 +289,22 @@ namespace generator
                 var prowadzacy = wylosowaniProwadzacySkladowych[rand.Next(0, wylosowaniProwadzacySkladowych.Count)];
                 prowadzacy.idskladowej = wylosowaneSkladowePrzedmiotu[rand.Next(0, wylosowaneSkladowePrzedmiotu.Count)].idskladowej;
 
+                wylosowaniProwadzacySkladowych.Remove(prowadzacy);
+                wylosowaniProwadzacySkladowych.Add(prowadzacy);
             }
         }
 
         private void aktualizujStudentow()
         {
-            foreach (var wynik in wylosowaneWyniki.FindAll((x) => x.wynik < 3.0f))
+            for(int i=0;i<wylosowaniStudenci.Count;i++)
             {
-                var student = wylosowaniStudenci.Find((x) => x.nrindeksu == wynik.indeksstudenta);
-                student.dlugects += wylosowanePrzedmioty.Find((x) => x.nazwa == wynik.nazwaprzedmiotu).ects;
+                wylosowaniStudenci[i].wyniki.ForEach((x) =>
+                {
+                    if (x.wynik < 3.0)
+                    {
+                        wylosowaniStudenci[i].dlugects += wylosowanePrzedmioty.Find((y) => y.nazwa == x.nazwaprzedmiotu).ects;
+                    }
+                });
             }
             foreach (var studenci in wylosowaniStudenci)
             {

@@ -3,7 +3,7 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
-        <TargetServer>HAIROX-KOMPUTER\ANALYS</TargetServer>
+        <TargetServer>DOMINIK-KOMP</TargetServer>
         <TargetDatabase>hurtownia</TargetDatabase>
         <StartObject>
           <ObjectId></ObjectId>
