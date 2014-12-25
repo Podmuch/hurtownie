@@ -1,0 +1,10 @@
+SELECT
+NON EMPTY
+{
+([Skladowe Przedmiotu].[Nazwa Skladowej].Children,[Measures].[Prowadzacy Skladowych Count])
+} ON COLUMNS,
+NON EMPTY
+{
+([ID Prowadzacego].[Imie I Nazwisko].Children,[ID Prowadzacego].[PESEL].Children)
+} ON ROWS
+FROM [Hurtownia Szkola]

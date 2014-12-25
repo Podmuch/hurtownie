@@ -1,0 +1,10 @@
+WITH
+MEMBER [Measures].[sredni wynik] AS
+'3+([Measures].[Wynik Procentowy]/[Measures].[Uzyskane Oceny Count]-50)/20', FORMAT_STRING = '#.###'
+
+SELECT
+{[Measures].[sredni wynik]} ON COLUMNS,
+{
+Filter(([ID Prowadzacego].[Imie I Nazwisko].Children, [ID Prowadzacego].[PESEL].Children, [Przedmioty].[Nazwa Przedmiotu].Children, [Data].[Semestr].Children), [Measures].[sredni wynik]>1)
+} ON ROWS
+FROM [Hurtownia Szkola]

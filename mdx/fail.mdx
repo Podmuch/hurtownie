@@ -1,16 +1,32 @@
 WITH
-SET [Prowadzacy zajecia] As
-'Filter(([ID Prowadzacego].[Imie I Nazwisko].Children, [ID Prowadzacego].[PESEL].Children, [Skladowe Przedmiotu].[Nazwa Skladowej].Children, [Przedmioty].[Nazwa Przedmiotu].Children), [Measures].[sredni wynik]>1)'
-MEMBER [Measures].[sredni wynik] AS
-'3+([Measures].[Wynik Procentowy]/[Measures].[Uzyskane Oceny Count]-50)/20', FORMAT_STRING = '#.###'
+SET [Studenci ktorzy nie zdali] AS
+'Filter(([Studenci].[PESEL].Children, [Przedmioty].[ID Przedmiotu].Children), [Measures].[Wynik]<3)'
+MEMBER [Measures].[ilosc niezdanych] AS
+'SUM([Studenci ktorzy nie zdali], [Measures].[Wyniki Count])'
 MEMBER [Measures].[roznica wyniku] AS
-'100*([Prowadzacy zajecia], [Data].[Od roku do dnia].[Semestr].[letni], [Measures].[sredni wynik])/([Prowadzacy zajecia],[Data].[Od roku do dnia].[Semestr].[zimowy], [Measures].[sredni wynik])-100', FORMAT_STRING = '#.###'
-MEMBER [Measures].[srednia roznica] AS
-'AVG([Prowadzacy zajecia], [Measures].[roznica wyniku])'
+'([Data].[Od roku do dnia].[Semestr].[letni],[Measures].[ilosc niezdanych])-([Data].[Od roku do dnia].[Semestr].[zimowy],[Measures].[ilosc niezdanych])'
 
 SELECT
-{[Measures].[sredni wynik]} ON COLUMNS,
+{[Measures].[Wyniki Count]} ON COLUMNS,
+NON EMPTY
 {
-Filter(([ID Prowadzacego].[Imie I Nazwisko].Children, [ID Prowadzacego].[PESEL].Children, [Skladowe Przedmiotu].[Nazwa Skladowej].Children, [Przedmioty].[Nazwa Przedmiotu].Children, [Data].[Semestr].Children), [Measures].[sredni wynik]>1)
+Filter(([Studenci].[PESEL].Children, [Przedmioty].[ID Przedmiotu].Children), [Measures].[Wynik]<3)
 } ON ROWS
 FROM [Hurtownia Szkola]
+
+
+//
+//WITH
+//SET [Prowadzone Przedmioty] As
+//'(Order(Filter([Przedmioty].[Nazwa Przedmiotu].Children ,[Measures].[roznica wyniku]>-100),[Measures].[roznica wyniku], desc))'
+//MEMBER [Measures].[roznica wyniku] AS
+//'100*([Data].[Od roku do dnia].[Semestr].[letni],[Measures].[srednia_procentowa])/([Data].[Od roku do dnia].[Semestr].[zimowy],[Measures].[srednia_procentowa])-100', FORMAT_STRING = '#.###'
+//MEMBER [Measures].[srednia roznica] AS
+//'AVG([Prowadzone Przedmioty], [Measures].[roznica wyniku])'
+//
+//SELECT
+//{([Measures].[srednia roznica])} ON COLUMNS,
+//{
+//  [Uzyskane Oceny]
+//} ON ROWS
+//FROM [Hurtownia Szkola]

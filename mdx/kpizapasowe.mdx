@@ -1,0 +1,17 @@
+WITH
+SET [Studenci ktorzy nie zdali w semestrze zimowym] AS
+'Filter(Filter(([Przedmioty].[ID Przedmiotu].Children,[Studenci].[ID Studenta].Children,[Data].[Semestr].[Zimowy]), [Measures].[sredni wynik]>1),[Measures].[sredni wynik]<3)'
+SET [Studenci ktorzy nie zdali w semestrze letnim] AS
+'Filter(Filter(([Przedmioty].[ID Przedmiotu].Children,[Studenci].[ID Studenta].Children,[Data].[Semestr].[Letni]), [Measures].[sredni wynik]>1),[Measures].[sredni wynik]<3)'
+MEMBER [Measures].[sredni wynik] AS
+'3+([Measures].[Wynik Procentowy]/[Measures].[Uzyskane Oceny Count]-50)/20', FORMAT_STRING = '#.###'
+MEMBER [Measures].[ilosc niezdanych w semestrze zimowym] AS
+'Count([Studenci ktorzy nie zdali w semestrze zimowym])'
+MEMBER [Measures].[ilosc niezdanych w semestrze letnim] AS
+'Count([Studenci ktorzy nie zdali w semestrze letnim])'
+MEMBER [Measures].[roznica wyniku] AS
+'([Measures].[ilosc niezdanych w semestrze letnim]-[Measures].[ilosc niezdanych w semestrze zimowym])/[Measures].[ilosc niezdanych w semestrze zimowym]', FORMAT_STRING = '#.### %'
+
+SELECT
+{[Measures].[roznica wyniku]} ON COLUMNS
+FROM [Hurtownia Szkola]
