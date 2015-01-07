@@ -1001,15 +1001,28 @@ If the CALCULATE command is deleted or modified, the data within the cube is aff
 You should edit this command only if you manually specify how the cube is aggregated.
 */
 CALCULATE; 
+CREATE MEMBER CURRENTCUBE.[Measures].sredni_wynik
+ AS 3+([Measures].[Wynik Procentowy]/[Measures].[Uzyskane Oceny Count]-50)/20, 
+VISIBLE = 1  ; 
+CREATE DYNAMIC SET CURRENTCUBE.[studenci_zimowi]
+ AS Filter(Filter(([Przedmioty].[ID Przedmiotu].Children,[Studenci].[ID Studenta].Children,[Data].[Semestr].[Zimowy]), [Measures].[sredni_wynik]&gt;1),[Measures].[sredni_wynik]&lt;3) ; 
+CREATE DYNAMIC SET CURRENTCUBE.[studenci_letni]
+ AS Filter(Filter(([Przedmioty].[ID Przedmiotu].Children,[Studenci].[ID Studenta].Children,[Data].[Semestr].[Letni]), [Measures].[sredni_wynik]&gt;1),[Measures].[sredni_wynik]&lt;3) ; 
+CREATE MEMBER CURRENTCUBE.[Measures].count_studenci_zimowi
+ AS Count([studenci_zimowi]), 
+VISIBLE = 1  ; 
+CREATE MEMBER CURRENTCUBE.[Measures].count_studenci_letni
+ AS Count([studenci_letni]), 
+VISIBLE = 1  ;  
 CREATE MEMBER CURRENTCUBE.[Measures].srednia
  AS [Measures].[Wynik]/[Measures].[Wyniki Count], 
-VISIBLE = 1  ; 
+VISIBLE = 1;  
 CREATE MEMBER CURRENTCUBE.[Measures].frekwencja
  AS [Measures].[Obecnosc]/[Measures].[Uzyskane Oceny Count], 
-VISIBLE = 1  ; 
+VISIBLE = 1;  
 CREATE MEMBER CURRENTCUBE.[Measures].srednia_procentowa
  AS [Measures].[Wynik Procentowy]/[Measures].[Uzyskane Oceny Count], 
-VISIBLE = 1  ; </Text>
+VISIBLE = 1; </Text>
         </Command>
       </Commands>
     </MdxScript>
@@ -1033,19 +1046,7 @@ VISIBLE = 1  ; </Text>
       <ID>KPI 1</ID>
       <Name>Zmiana ilości nie zdawanych przedmiotów</Name>
       <AssociatedMeasureGroupID>Uzyskane Oceny</AssociatedMeasureGroupID>
-      <Value>WITH
-SET [Studenci ktorzy nie zdali w semestrze zimowym] AS
-'Filter(Filter(([Przedmioty].[ID Przedmiotu].Children,[Studenci].[ID Studenta].Children,[Data].[Semestr].[Zimowy]), [Measures].[sredni wynik]&gt;1),[Measures].[sredni wynik]&lt;3)'
-SET [Studenci ktorzy nie zdali w semestrze letnim] AS
-'Filter(Filter(([Przedmioty].[ID Przedmiotu].Children,[Studenci].[ID Studenta].Children,[Data].[Semestr].[Letni]), [Measures].[sredni wynik]&gt;1),[Measures].[sredni wynik]&lt;3)'
-MEMBER [Measures].[sredni wynik] AS
-'3+([Measures].[Wynik Procentowy]/[Measures].[Uzyskane Oceny Count]-50)/20'
-MEMBER [Measures].[ilosc niezdanych w semestrze zimowym] AS
-'Count([Studenci ktorzy nie zdali w semestrze zimowym])'
-MEMBER [Measures].[ilosc niezdanych w semestrze letnim] AS
-'Count([Studenci ktorzy nie zdali w semestrze letnim])'
-
-([Measures].[ilosc niezdanych w semestrze letnim]-[Measures].[ilosc niezdanych w semestrze zimowym])/[Measures].[ilosc niezdanych w semestrze zimowym]</Value>
+      <Value>([Measures].[count_studenci_letni]-[Measures].[count_studenci_zimowi])/[Measures].[count_studenci_zimowi]</Value>
       <Goal>-5</Goal>
       <Status>IIf (KPIVALUE( "Zmiana ilości nie zdawanych przedmiotów" ) &gt; KPIGoal("Zmiana ilości nie zdawanych przedmiotów"), 1, -1)</Status>
       <Trend>IIf ( KPIValue( "Zmiana ilości nie zdawanych przedmiotów" ) &gt; ( KPIValue( "Zmiana ilości nie zdawanych przedmiotów" ), ParallelPeriod (
