@@ -1,27 +1,27 @@
 ﻿<Infos>
-  <Item name="Hurtownia Szkola.partitions">
-    <Time>635538344457490929</Time>
+  <Item name="Prowadzacy.dim">
+    <Time>635538344457540744</Time>
     <Hash length="20">
-      <b>182</b>
-      <b>7</b>
-      <b>68</b>
-      <b>54</b>
-      <b>133</b>
-      <b>154</b>
-      <b>178</b>
-      <b>103</b>
-      <b>248</b>
-      <b>171</b>
-      <b>97</b>
-      <b>0</b>
-      <b>14</b>
-      <b>73</b>
-      <b>117</b>
-      <b>71</b>
-      <b>35</b>
-      <b>224</b>
-      <b>183</b>
-      <b>179</b>
+      <b>112</b>
+      <b>59</b>
+      <b>27</b>
+      <b>214</b>
+      <b>122</b>
+      <b>18</b>
+      <b>207</b>
+      <b>119</b>
+      <b>84</b>
+      <b>28</b>
+      <b>172</b>
+      <b>12</b>
+      <b>124</b>
+      <b>255</b>
+      <b>92</b>
+      <b>251</b>
+      <b>124</b>
+      <b>197</b>
+      <b>190</b>
+      <b>4</b>
     </Hash>
   </Item>
   <Item name="Przedmioty.dim">
@@ -49,81 +49,6 @@
       <b>73</b>
     </Hash>
   </Item>
-  <Item name="Data.dim">
-    <Time>635541554426592832</Time>
-    <Hash length="20">
-      <b>240</b>
-      <b>74</b>
-      <b>49</b>
-      <b>155</b>
-      <b>225</b>
-      <b>56</b>
-      <b>11</b>
-      <b>250</b>
-      <b>116</b>
-      <b>46</b>
-      <b>103</b>
-      <b>232</b>
-      <b>138</b>
-      <b>140</b>
-      <b>200</b>
-      <b>141</b>
-      <b>173</b>
-      <b>181</b>
-      <b>162</b>
-      <b>210</b>
-    </Hash>
-  </Item>
-  <Item name="Hurtownia Szkola.cube">
-    <Time>635562674791864362</Time>
-    <Hash length="20">
-      <b>15</b>
-      <b>74</b>
-      <b>209</b>
-      <b>96</b>
-      <b>134</b>
-      <b>147</b>
-      <b>238</b>
-      <b>97</b>
-      <b>62</b>
-      <b>133</b>
-      <b>56</b>
-      <b>244</b>
-      <b>38</b>
-      <b>133</b>
-      <b>109</b>
-      <b>208</b>
-      <b>183</b>
-      <b>68</b>
-      <b>74</b>
-      <b>1</b>
-    </Hash>
-  </Item>
-  <Item name="Hurtownia Szkola.ds">
-    <Time>635545009698175294</Time>
-    <Hash length="20">
-      <b>58</b>
-      <b>227</b>
-      <b>30</b>
-      <b>254</b>
-      <b>182</b>
-      <b>152</b>
-      <b>34</b>
-      <b>180</b>
-      <b>83</b>
-      <b>179</b>
-      <b>8</b>
-      <b>237</b>
-      <b>161</b>
-      <b>165</b>
-      <b>48</b>
-      <b>115</b>
-      <b>29</b>
-      <b>184</b>
-      <b>151</b>
-      <b>0</b>
-    </Hash>
-  </Item>
   <Item name="Skladowe Przedmiotu.dim">
     <Time>635541651144597311</Time>
     <Hash length="20">
@@ -147,56 +72,6 @@
       <b>33</b>
       <b>114</b>
       <b>66</b>
-    </Hash>
-  </Item>
-  <Item name="Prowadzacy.dim">
-    <Time>635538344457540744</Time>
-    <Hash length="20">
-      <b>112</b>
-      <b>59</b>
-      <b>27</b>
-      <b>214</b>
-      <b>122</b>
-      <b>18</b>
-      <b>207</b>
-      <b>119</b>
-      <b>84</b>
-      <b>28</b>
-      <b>172</b>
-      <b>12</b>
-      <b>124</b>
-      <b>255</b>
-      <b>92</b>
-      <b>251</b>
-      <b>124</b>
-      <b>197</b>
-      <b>190</b>
-      <b>4</b>
-    </Hash>
-  </Item>
-  <Item name="Hurtownia Szkola.dsv">
-    <Time>635551134151629899</Time>
-    <Hash length="20">
-      <b>183</b>
-      <b>183</b>
-      <b>224</b>
-      <b>150</b>
-      <b>42</b>
-      <b>94</b>
-      <b>251</b>
-      <b>89</b>
-      <b>193</b>
-      <b>181</b>
-      <b>2</b>
-      <b>170</b>
-      <b>87</b>
-      <b>28</b>
-      <b>150</b>
-      <b>217</b>
-      <b>120</b>
-      <b>125</b>
-      <b>249</b>
-      <b>218</b>
     </Hash>
   </Item>
   <Item name="Studenci.dim">
@@ -224,6 +99,106 @@
       <b>94</b>
     </Hash>
   </Item>
+  <Item name="Hurtownia Szkola.cube">
+    <Time>635563171090309403</Time>
+    <Hash length="20">
+      <b>159</b>
+      <b>241</b>
+      <b>79</b>
+      <b>31</b>
+      <b>237</b>
+      <b>25</b>
+      <b>232</b>
+      <b>43</b>
+      <b>232</b>
+      <b>206</b>
+      <b>252</b>
+      <b>64</b>
+      <b>144</b>
+      <b>76</b>
+      <b>110</b>
+      <b>3</b>
+      <b>120</b>
+      <b>204</b>
+      <b>67</b>
+      <b>213</b>
+    </Hash>
+  </Item>
+  <Item name="Hurtownia Szkola.ds">
+    <Time>635545009698175294</Time>
+    <Hash length="20">
+      <b>58</b>
+      <b>227</b>
+      <b>30</b>
+      <b>254</b>
+      <b>182</b>
+      <b>152</b>
+      <b>34</b>
+      <b>180</b>
+      <b>83</b>
+      <b>179</b>
+      <b>8</b>
+      <b>237</b>
+      <b>161</b>
+      <b>165</b>
+      <b>48</b>
+      <b>115</b>
+      <b>29</b>
+      <b>184</b>
+      <b>151</b>
+      <b>0</b>
+    </Hash>
+  </Item>
+  <Item name="Data.dim">
+    <Time>635541554426592832</Time>
+    <Hash length="20">
+      <b>240</b>
+      <b>74</b>
+      <b>49</b>
+      <b>155</b>
+      <b>225</b>
+      <b>56</b>
+      <b>11</b>
+      <b>250</b>
+      <b>116</b>
+      <b>46</b>
+      <b>103</b>
+      <b>232</b>
+      <b>138</b>
+      <b>140</b>
+      <b>200</b>
+      <b>141</b>
+      <b>173</b>
+      <b>181</b>
+      <b>162</b>
+      <b>210</b>
+    </Hash>
+  </Item>
+  <Item name="Hurtownia Szkola.dsv">
+    <Time>635551134151629899</Time>
+    <Hash length="20">
+      <b>183</b>
+      <b>183</b>
+      <b>224</b>
+      <b>150</b>
+      <b>42</b>
+      <b>94</b>
+      <b>251</b>
+      <b>89</b>
+      <b>193</b>
+      <b>181</b>
+      <b>2</b>
+      <b>170</b>
+      <b>87</b>
+      <b>28</b>
+      <b>150</b>
+      <b>217</b>
+      <b>120</b>
+      <b>125</b>
+      <b>249</b>
+      <b>218</b>
+    </Hash>
+  </Item>
   <Item name="kostka.database">
     <Time>635535843864560246</Time>
     <Hash length="20">
@@ -247,6 +222,31 @@
       <b>181</b>
       <b>37</b>
       <b>202</b>
+    </Hash>
+  </Item>
+  <Item name="Hurtownia Szkola.partitions">
+    <Time>635538344457490929</Time>
+    <Hash length="20">
+      <b>182</b>
+      <b>7</b>
+      <b>68</b>
+      <b>54</b>
+      <b>133</b>
+      <b>154</b>
+      <b>178</b>
+      <b>103</b>
+      <b>248</b>
+      <b>171</b>
+      <b>97</b>
+      <b>0</b>
+      <b>14</b>
+      <b>73</b>
+      <b>117</b>
+      <b>71</b>
+      <b>35</b>
+      <b>224</b>
+      <b>183</b>
+      <b>179</b>
     </Hash>
   </Item>
   <Item name="Czas.dim">

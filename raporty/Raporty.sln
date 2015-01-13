@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Raporty", "Raporty\Raporty.rptproj", "{08C38A46-4E16-4589-AD7A-19A5DB02643F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08C38A46-4E16-4589-AD7A-19A5DB02643F}.Debug|Default.ActiveCfg = Debug
+		{08C38A46-4E16-4589-AD7A-19A5DB02643F}.Debug|Default.Build.0 = Debug
+		{08C38A46-4E16-4589-AD7A-19A5DB02643F}.Debug|Default.Deploy.0 = Debug
+		{08C38A46-4E16-4589-AD7A-19A5DB02643F}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{08C38A46-4E16-4589-AD7A-19A5DB02643F}.DebugLocal|Default.Build.0 = DebugLocal
+		{08C38A46-4E16-4589-AD7A-19A5DB02643F}.Release|Default.ActiveCfg = Release
+		{08C38A46-4E16-4589-AD7A-19A5DB02643F}.Release|Default.Build.0 = Release
+		{08C38A46-4E16-4589-AD7A-19A5DB02643F}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

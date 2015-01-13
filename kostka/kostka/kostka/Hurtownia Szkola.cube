@@ -706,7 +706,6 @@
           <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
         </Dimension>
       </Dimensions>
-      <Partitions />
     </MeasureGroup>
     <MeasureGroup dwd:design-time-name="650c668c-dd7d-482d-aa68-72e891336978">
       <ID>Uzyskane Oceny</ID>
@@ -903,7 +902,6 @@
           </Attributes>
         </Dimension>
       </Dimensions>
-      <Partitions />
     </MeasureGroup>
     <MeasureGroup dwd:design-time-name="ba730348-5ed3-4103-b77e-395b15123d36">
       <ID>Prowadzacy Skladowych</ID>
@@ -981,7 +979,6 @@
           <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
         </Dimension>
       </Dimensions>
-      <Partitions />
     </MeasureGroup>
   </MeasureGroups>
   <Source dwd:design-time-name="ad4dc356-f62c-4b91-96a8-001ec899d35a">
@@ -1048,7 +1045,7 @@ VISIBLE = 1; </Text>
       <AssociatedMeasureGroupID>Uzyskane Oceny</AssociatedMeasureGroupID>
       <Value>([Measures].[count_studenci_letni]-[Measures].[count_studenci_zimowi])/[Measures].[count_studenci_zimowi]</Value>
       <Goal>-5</Goal>
-      <Status>IIf (KPIVALUE( "Zmiana ilości nie zdawanych przedmiotów" ) &gt; KPIGoal("Zmiana ilości nie zdawanych przedmiotów"), 1, -1)</Status>
+      <Status>IIf (KPIVALUE( "Zmiana ilości nie zdawanych przedmiotów" ) &gt; KPIGoal("Zmiana ilości nie zdawanych przedmiotów"), -1, 1)</Status>
       <Trend>IIf ( KPIValue( "Zmiana ilości nie zdawanych przedmiotów" ) &gt; ( KPIValue( "Zmiana ilości nie zdawanych przedmiotów" ), ParallelPeriod (
 [Data].[Od roku do dnia].[Semestr], 1,
 [Data].[Od roku do dnia].CurrentMember ) ), 1, -1)</Trend>

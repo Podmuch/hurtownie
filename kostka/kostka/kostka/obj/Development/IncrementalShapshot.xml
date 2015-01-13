@@ -82,7 +82,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>D0rRYIaT7mE+hTj0JoVt0LdESgE=2015-01-07 22:44:392014-12-10 18:54:05tgdENoWasmf4q2EADkl1RyPgt7M=2014-12-10 18:54:052014-12-10 18:54:05</TimeStamp>
+        <TimeStamp>n/FPH+0Z6CvozvxAkExuA3jMQ9U=2015-01-08 12:31:492014-12-10 18:54:05tgdENoWasmf4q2EADkl1RyPgt7M=2014-12-10 18:54:052014-12-10 18:54:05</TimeStamp>
         <ID>
           <String>Hurtownia Szkola</String>
         </ID>
@@ -99,5 +99,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2015-01-07T21:44:55.056667Z</LastDeployed>
+  <LastDeployed>2015-01-08T11:32:37.14Z</LastDeployed>
 </DeploymentSnapshot>
